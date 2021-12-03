@@ -1,0 +1,72 @@
+/* SA do Footer */
+.sa{
+    color: #ff8000;
+}
+
+/* Footer */
+
+footer{
+    background: var(--base-color);
+    position: inherit;
+    bottom: 0;
+    width: 100%;
+}
+footer .logo{
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer.section{
+    padding: 4rem 0;
+    
+}
+
+footer .brand p{
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+.i-email{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social a{
+    margin-right: 2rem;
+    display: inline-block;
+    transition: .3s;
+    
+}
+
+footer .social a:hover {
+    transform: translateY(-15px);
+}
+
+
+
+@media (min-width: 1200px) {
+    /* Footer */
+    .container{
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    footer.section{
+        padding: 3.75rem 0; 
+    }
+
+    footer .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .logo{
+        font-size: 2.25rem;
+    }
+}
