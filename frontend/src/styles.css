@@ -35,6 +35,24 @@ body {
     --body-font:"DM Sans", sans-serif;
 }
 
+/* Divisão em linha */
+.divider-1{
+    height: 1px;
+    background: linear-gradient(
+        270deg,
+        hsla(var(--hue), 36%, 57%, 1) 0%,
+        hsla(var(--hue), 65%, 88%, 0.34) 100%);
+}
+
+.divider-2{
+    height: 1px;
+    background: linear-gradient(
+        270deg,
+        hsla(var(--hue), 65%, 88%, 0.34),
+        hsla(var(--hue), 36%, 57%, 1)
+        );
+}
+
 /* Logo */
 
 .logo{
