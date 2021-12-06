@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  cadBaseUrl: 'http://localhost:3000/cadastro'
 };

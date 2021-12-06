@@ -1,0 +1,13 @@
+{
+    "cadastro": [
+        {
+            "id": 1,
+            "nome": "silvio",
+            "sobrenome": "santos",
+            "email": "sinvio@santos.com",
+            "telefone": "2140028922",
+            "valor": 50.00,
+            "desconto": 5
+        }
+    ]
+}
