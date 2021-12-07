@@ -10,13 +10,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './site/home/home.component'
+import { ListComponent } from './site/list/list.component';
+import { ContentComponent } from './site/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ListComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
