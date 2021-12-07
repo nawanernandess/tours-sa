@@ -1,13 +1,22 @@
 {
-    "cadastro": [
-        {
-            "id": 1,
-            "nome": "silvio",
-            "sobrenome": "santos",
-            "email": "sinvio@santos.com",
-            "telefone": "2140028922",
-            "valor": 50.00,
-            "desconto": 5
-        }
-    ]
+  "cadastro": [
+    {
+      "id": 1,
+      "nome": "silvio",
+      "sobrenome": "santos",
+      "email": "sinvio@santos.com",
+      "telefone": "2140028922",
+      "valor": 50,
+      "desconto": 5
+    },
+    {
+      "id": 9,
+      "nome": "teste",
+      "sobrenome": "teste",
+      "email": "teste@teste.com",
+      "telefone": "2131313131",
+      "valor": 0,
+      "desconto": 0
+    }
+  ]
 }
