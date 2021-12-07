@@ -23,22 +23,19 @@ export class ContactService {
         })
     }
 
-    creat(cadastro: Cadastro): Observable<Cadastro>{
+    create(cadastro: Cadastro): Observable<Cadastro>{
         return this.http.post<Cadastro>(this.baseUrl, cadastro)
     }
     read(): Observable<Cadastro[]>{
         return this.http.get<Cadastro[]>(this.baseUrl)
     }
-    readById(id: string): Observable<Cadastro> {
-        const url = `${this.baseUrl}/${id}`
-        return this.http.get<Cadastro>(url)
+    readById(id: number): Observable<Cadastro> {
+        return this.http.get<Cadastro>(`${this.baseUrl}/${id}`)
     }
     update(cadastro: Cadastro): Observable<Cadastro>{
-        const url = `${this.baseUrl}/${cadastro.id}`
-        return this.http.put<Cadastro>(url, cadastro)
+        return this.http.put<Cadastro>(`${this.baseUrl}/${cadastro.id}`, cadastro)
     }
-    delte(cadastro: Cadastro): Observable<Cadastro>{
-        const url = `${this.baseUrl}/${cadastro.id}`
-        return this.http.delete<Cadastro>(url)
+    delete(id: number): Observable<Cadastro>{
+        return this.http.delete<Cadastro>(`${this.baseUrl}/${id}`)
     }
 }

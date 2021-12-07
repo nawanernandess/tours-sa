@@ -1,13 +1,13 @@
-import { Cadastro } from './../../model/cadastro.model';
-import { ContactService } from './../../service/contact.service';
+import { Cadastro } from '../../model/cadastro.model';
+import { ContactService } from '../../service/contact.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-read-registration',
+  templateUrl: './read-registration.component.html',
+  styleUrls: ['./read-registration.component.css']
 })
-export class ListComponent implements OnInit {
+export class ReadRegistrationComponent implements OnInit {
 
   cadastros: Cadastro []
   displayColumns = ['id', 'nome', 'sobrenome', 'email', 'telefone', 'valor', 'desconto', 'acao']

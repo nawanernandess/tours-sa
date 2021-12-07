@@ -6,13 +6,25 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card'
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './site/home/home.component'
-import { ListComponent } from './site/list/list.component';
+import { ReadRegistrationComponent } from './crud-components/read-registration/read-registration.component';
+import { CreateRegistrationComponent } from './crud-components/create-registration/create-registration.component'
 import { ContentComponent } from './site/content/content.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +32,8 @@ import { ContentComponent } from './site/content/content.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    ListComponent,
+    ReadRegistrationComponent,
+    CreateRegistrationComponent,
     ContentComponent
   ],
   imports: [
@@ -30,7 +43,16 @@ import { ContentComponent } from './site/content/content.component';
     BsDropdownModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    ModalModule.forRoot(),
+    MatDialogModule,
+    FormsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './site/content/content.component';
-import { ListComponent } from './site/list/list.component';
+import { ReadRegistrationComponent } from './crud-components/read-registration/read-registration.component';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ContentComponent
   },{
     path: "lista",
-    component: ListComponent
+    component: ReadRegistrationComponent
   }
 ];
 

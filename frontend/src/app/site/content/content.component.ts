@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateRegistrationComponent } from 'src/app/crud-components/create-registration/create-registration.component';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openModCad(){
+    const dialogRef = this.dialog.open(CreateRegistrationComponent, {
+      width: '1000px'
+    })
+
+    dialogRef.afterClosed().subscribe();
   }
 
 }
