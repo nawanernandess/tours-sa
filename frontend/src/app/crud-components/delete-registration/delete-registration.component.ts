@@ -42,7 +42,7 @@ export class DeleteRegistrationComponent implements OnInit {
       this.dialogRef.close()
     })
   }
-
+  
   cancel(){
     this.dialogRef.close()
   }

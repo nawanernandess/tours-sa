@@ -29,8 +29,8 @@ export class UpdateRegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.contactService.readById(Number(id)).subscribe( cadastro => {
+    
+    this.contactService.readById(1).subscribe( cadastro => {
       this.cadastro = cadastro
     })
   }
