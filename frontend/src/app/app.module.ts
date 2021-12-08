@@ -1,3 +1,4 @@
+import { DeleteRegistrationComponent } from './crud-components/delete-registration/delete-registration.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +23,8 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './site/home/home.component'
 import { ReadRegistrationComponent } from './crud-components/read-registration/read-registration.component';
-import { CreateRegistrationComponent } from './crud-components/create-registration/create-registration.component'
+import { CreateRegistrationComponent } from './crud-components/create-registration/create-registration.component';
+import { UpdateRegistrationComponent } from './crud-components/update-registration/update-registration.component';
 import { ContentComponent } from './site/content/content.component';
 
 
@@ -34,6 +36,8 @@ import { ContentComponent } from './site/content/content.component';
     HomeComponent,
     ReadRegistrationComponent,
     CreateRegistrationComponent,
+    UpdateRegistrationComponent,
+    DeleteRegistrationComponent,
     ContentComponent
   ],
   imports: [

@@ -1,3 +1,43 @@
-<p>
-  delete-registration works!
-</p>
+<div class="container" >
+  <mat-card class="home mat-elevation-z3">
+      <form>
+          <div class="form-row flex mb-4">
+              <div class="form-group col-md-6">
+                  <label for="inputNome"></label>
+                  <input  matInput class="form-control" id="inputNome" placeholder="Nome" [(ngModel)]="cadastro.nome" name="nome" disabled>
+              </div>
+              
+              <div class="form-group col-md-6">
+                  <label for="inputSobrenome"></label>
+                  <input matInput class="form-control" id="inputSobrenome" placeholder="Sobrenome" [(ngModel)]="cadastro.sobrenome" name="sobrenome" disabled>
+              </div>
+          </div>
+      
+          <div class="form-group">
+              <label for="inputEmail"></label>
+              <input matInput type="email" class="form-control" id="inputEmail" placeholder="E-mail" [(ngModel)]="cadastro.email" name="email" disabled>
+          </div>
+
+          <div class="form-row flex mt-4">
+              <div class="form-group col-md-4">
+                  <label for="inputTel"></label>
+                  <input matInput type="tel" class="form-control" id="inputTel" placeholder="Telefone" [(ngModel)]="cadastro.telefone" name="telefone" disabled>
+              </div>
+              
+              <div class="form-group col-md-4">
+                  <label for="inputVal"></label>
+                  <input matInput class="form-control" id="inputVal" placeholder="R$" [(ngModel)]="cadastro.valor" name="valor" disabled>
+              </div>
+
+              <div class="form-group col-md-4">
+                  <label for="inputDesconto"></label>
+                  <input matInput class="form-control" id="inputDesconto" placeholder="Desconto" [(ngModel)]="cadastro.desconto" name="desconto" disabled>
+              </div>
+          </div>
+              
+          <button class="btn btn-primary mt-4 marg" >Deletar</button>
+          <button class="btn btn-primary mt-4" (click)="cancel()">Voltar</button>
+      </form>
+  </mat-card>
+</div>
+

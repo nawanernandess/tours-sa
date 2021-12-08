@@ -1,5 +1,5 @@
+import { Cadastro } from './../model/cadastro.model';
 import { environment } from './../../environments/environment';
-import { Cadastro } from '../model/cadastro.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
