@@ -47,7 +47,7 @@
               <ng-container matColumnDef="acao">
                   <th mat-header-cell *matHeaderCellDef>Ações</th>
                   <td mat-cell *matCellDef="let row">
-                      <a  (click)="openModUp()" class="edit">
+                      <a (click)="openModUp()" routerLink="/lista/update/{{ row.id }}" class="edit">
                           <i class="material-icons">
                           edit
                           </i>

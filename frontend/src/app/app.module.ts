@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card'
@@ -58,7 +58,7 @@ import { ContentComponent } from './site/content/content.component';
     MatIconModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [{provide : MatDialogRef, useValue : {}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

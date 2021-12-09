@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Cadastro } from '../../model/cadastro.model';
 import { ContactService } from '../../service/contact.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-read-registration',
@@ -15,7 +16,7 @@ export class ReadRegistrationComponent implements OnInit {
   cadastros: Cadastro []
   displayColumns = ['id', 'nome', 'sobrenome', 'email', 'telefone', 'valor', 'desconto', 'acao']
 
-  constructor(private contactService: ContactService, public dialog: MatDialog) { }
+  constructor(private contactService: ContactService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.contactService.read().subscribe(cadastro => {
