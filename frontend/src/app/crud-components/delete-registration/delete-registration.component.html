@@ -35,7 +35,23 @@
               </div>
           </div>
               
-          <button class="btn btn-primary mt-4 marg" (click)="deletarGuia()">Deletar</button>
+          <button class="btn btn-primary mt-4 marg" (click)="modDeletarGuia(template)">Deletar</button>
+          <ng-template #template>
+            <div class="modal-header">
+                <h2>Você realmente deseja deletar esta conta?</h2>
+              <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef.hide()"> <!-- (click)="modalRef?.hide() -->
+                <span aria-hidden="true" class="visually-hidden"></span>
+              </button>
+            </div>
+            <div class="modal-body space-between">
+                <div class="space">
+              <button class="btn btn-primary">SIM</button>
+            
+              <button class="btn btn-primary">NÃO</button>
+            </div>
+            </div>
+          </ng-template>
+
           <button class="btn btn-primary mt-4" (click)="cancel()">Voltar</button>
       </form>
   </mat-card>

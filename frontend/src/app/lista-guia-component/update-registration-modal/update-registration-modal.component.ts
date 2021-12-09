@@ -1,23 +1,23 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Cadastro } from './../../model/cadastro.model';
-import { ContactService } from './../../service/contact.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Cadastro } from 'src/app/model/cadastro.model';
+import { ContactService } from 'src/app/service/contact.service';
 
 @Component({
-  selector: 'app-update-registration',
-  templateUrl: './update-registration.component.html',
-  styleUrls: ['./update-registration.component.css']
+  selector: 'app-update-registration-modal',
+  templateUrl: './update-registration-modal.component.html',
+  styleUrls: ['./update-registration-modal.component.css']
 })
-export class UpdateRegistrationComponent implements OnInit {
+export class UpdateRegistrationModalComponent implements OnInit {
 
   cadastro: Cadastro;
-
+  
   constructor(
     private contactService: ContactService,
     private router: Router,
     private route: ActivatedRoute,
-    // public dialogRef: MatDialogRef<UpdateRegistrationComponent>
+    public dialogRef: MatDialogRef<UpdateRegistrationModalComponent>
   ) { }
 
   ngOnInit() {
@@ -26,16 +26,15 @@ export class UpdateRegistrationComponent implements OnInit {
       this.cadastro = cadastro
     })
   }
-  
+
   updateGuia(){
     this.contactService.update(this.cadastro).subscribe(() => {
       this.contactService.showMessage("Conta atualizada com sucesso!")
-      this.router.navigate(['/lista'])
+      
     })
   }
 
   cancel(){
-    this.router.navigate(['/lista'])
+    
   }
-
 }

@@ -10,15 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateRegistrationComponent implements OnInit {
 
-  cadastro: Cadastro = {
-    id: 0,
-    nome: '',
-    sobrenome: '',
-    email: '',
-    telefone: '',
-    valor: 0,
-    desconto: 0
-  }
+  cadastro: Cadastro;
   
   constructor(private contactService: ContactService, 
     public dialogRef: MatDialogRef<CreateRegistrationComponent>) { }

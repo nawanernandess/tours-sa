@@ -5,3 +5,16 @@
 .marg{
     margin-right: 15px;
 }
+
+
+/* Modal */
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 120px, 0, 120px, 0 ;
+}
+.space{
+    display: contents;
+}

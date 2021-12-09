@@ -27,9 +27,13 @@ import { CreateRegistrationComponent } from './crud-components/create-registrati
 import { UpdateRegistrationComponent } from './crud-components/update-registration/update-registration.component';
 import { ContentComponent } from './site/content/content.component';
 
+import { ListaGuiaComponentComponent } from './lista-guia-component/lista-guia-component.component';
+import { UpdateRegistrationModalComponent } from './lista-guia-component/update-registration-modal/update-registration-modal.component';
+
+
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     NavbarComponent,
     FooterComponent,
@@ -38,8 +42,11 @@ import { ContentComponent } from './site/content/content.component';
     CreateRegistrationComponent,
     UpdateRegistrationComponent,
     DeleteRegistrationComponent,
-    ContentComponent
-  ],
+    ContentComponent,
+    ListaGuiaComponentComponent,
+
+    UpdateRegistrationModalComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

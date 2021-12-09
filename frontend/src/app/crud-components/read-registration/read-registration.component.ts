@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class ReadRegistrationComponent implements OnInit {
 
-  cadastros: Cadastro []
+  cadastros: Cadastro[]
   displayColumns = ['id', 'nome', 'sobrenome', 'email', 'telefone', 'valor', 'desconto', 'acao']
 
   constructor(private contactService: ContactService, public dialog: MatDialog, private router: Router) { }
@@ -25,19 +25,24 @@ export class ReadRegistrationComponent implements OnInit {
     })
   }
 
-  openModUp(){
-    const dialogRef = this.dialog.open(UpdateRegistrationComponent, {
-      width: '1000px'
-    })
-
-    dialogRef.afterClosed().subscribe();
+  teste(id: any) :void {
+    console.log(id);
   }
 
-  openModDel(){
-    const dialogRef = this.dialog.open(DeleteRegistrationComponent, {
-      width: '1000px'
-    })
+  // abrir um dialog
+  // openModUp(){
+  //   const dialogRef = this.dialog.open(UpdateRegistrationComponent, {
+  //     width: '1000px'
+  //   })
 
-    dialogRef.afterClosed().subscribe();
-  }
+  //   dialogRef.afterClosed().subscribe();
+  // }
+
+  // openModDel(){
+  //   const dialogRef = this.dialog.open(DeleteRegistrationComponent, {
+  //     width: '1000px'
+  //   })
+
+  //   dialogRef.afterClosed().subscribe();
+  // }
 }
