@@ -1,3 +1,4 @@
+<!-- List -->
 <div class="container">
   <div class="mat-elevation-z3">
       <table mat-table [dataSource]="cadastros">
@@ -47,12 +48,12 @@
               <ng-container matColumnDef="acao">
                   <th mat-header-cell *matHeaderCellDef>Ações</th>
                   <td mat-cell *matCellDef="let row">
-                      <a (click)="openModUp()" class="edit">
+                      <a style="cursor: pointer;" (click)="openModUp(row.id)" class="edit">
                           <i class="material-icons">
                           edit
                           </i>
                       </a>
-                      <a  class="delete">
+                      <a style="cursor: pointer;" (click)="openModDel(template)"  class="delete">
                           <i class="material-icons">
                           delete
                           </i>
@@ -65,3 +66,23 @@
       </table>
   </div>
 </div>
+
+
+<!-- Modal Delete -->
+<ng-template #template>
+    <div class="modal-header">
+      <h2 class="modal-title pull-left">EXCLUIR REGISTRO</h2>
+      <button type="button" class="btn-close close pull-right" aria-label="Close">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Você tem certeza que deseja excluir esse registro!
+    </div>
+    <div class="modal-footer space">
+        <div class="center">
+        <button class="btn btn-secondary" (click)="closedModelDel()" >Cancelar</button>
+        <button class="btn btn-danger" >Excluir</button>
+    </div>
+    </div>
+  </ng-template>

@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Cadastro } from '../model/cadastro.model';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Cadastro } from './../model/cadastro.model';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { MatDialog} from '@angular/material/dialog';
 import { ContactService } from '../service/contact.service';
 import { UpdateRegistrationModalComponent } from './update-registration-modal/update-registration-modal.component';
 
@@ -13,15 +13,20 @@ import { UpdateRegistrationModalComponent } from './update-registration-modal/up
 export class ListaGuiaComponentComponent implements OnInit {
 
   cadastros: Cadastro[]
+
+  // Modal Update
+  cadastro: Cadastro;
+  dialogRef: any;
+
+  // Modal Delete
+  modalRef: BsModalRef;
+
   displayColumns = ['id', 'nome', 'sobrenome', 'email', 'telefone', 'valor', 'desconto', 'acao']
   
     constructor(
       private contactService: ContactService, 
-      private router: Router, 
-      private route: ActivatedRoute,
+      private modalService: BsModalService,
       public dialog: MatDialog,
-
-      @Inject(MAT_DIALOG_DATA) public data: {id: number}
       ) { }
 
   ngOnInit() {
@@ -32,21 +37,34 @@ export class ListaGuiaComponentComponent implements OnInit {
   }
 
   
-  openModUp(){
-    const id = this.route.snapshot.paramMap.get('id')
-    const dialogRef = this.dialog.open(UpdateRegistrationModalComponent, {
-      width: '1000px',
-      data: {id: this.contactService.readById(Number(id))}
-    })
+  openModUp(id: any): Promise<void> {
 
-    dialogRef.afterClosed().subscribe();
+    let promise = new Promise<void>((resolve, reject) => {
+
+      this.contactService.readById(parseInt(id)).subscribe(result => {
+        this.cadastro = result;
+        resolve();
+        },
+        reason => {
+          reject(reason);
+        }
+      );
+    }).finally(
+      () =>       this.dialogRef = this.dialog.open(UpdateRegistrationModalComponent, {
+      width: '1000px',
+      data: {cadastro: this.cadastro}
+      }),
+    );
+    // this.dialogRef.afterClosed().subscribe();
+    return promise;
+
   }
 
-  // openModDel(){
-  //   const dialogRef = this.dialog.open(DeleteRegistrationComponent, {
-  //     width: '1000px'
-  //   })
+   openModDel(template: TemplateRef<any>){
+    this.modalService.show(template);
+  }
 
-  //   dialogRef.afterClosed().subscribe();
-  // }
+  closedModelDel(){
+    this.modalService.hide();
+  }
 }

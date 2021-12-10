@@ -14,3 +14,18 @@ table{
 .delete > i{
     color: #e35e6b;
 }
+
+
+/* Modal */
+
+.space{
+    display: flex;
+    justify-content: center;
+}
+.center{
+    display: flex;
+}
+
+button{
+    margin: 10px;
+}
