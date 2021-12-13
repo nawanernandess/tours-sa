@@ -2,21 +2,30 @@
   "cadastro": [
     {
       "id": 1,
-      "nome": "santos",
+      "nome": "silvio",
       "sobrenome": "santos",
-      "email": "sinvio@santos.com",
-      "telefone": "2140028922",
+      "email": "silvio@santos.com",
+      "telefone": "21100000",
       "valor": "6",
-      "desconto": 5
+      "desconto": "9"
     },
     {
       "id": 2,
       "nome": "teste",
       "sobrenome": "teste",
       "email": "teste@teste.com",
-      "telefone": "21636363333",
-      "valor": "50",
-      "desconto": "8.0"
+      "telefone": "5521972",
+      "valor": "8",
+      "desconto": "1"
+    },
+    {
+      "id": 3,
+      "nome": "teste2",
+      "sobrenome": "teste2",
+      "email": "teste2@teste2.com",
+      "telefone": "08000",
+      "valor": "10",
+      "desconto": "2"
     }
   ]
 }

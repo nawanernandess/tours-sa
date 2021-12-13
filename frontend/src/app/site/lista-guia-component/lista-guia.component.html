@@ -53,7 +53,7 @@
                           edit
                           </i>
                       </a>
-                      <a style="cursor: pointer;" (click)="openModDel(template)"  class="delete">
+                      <a style="cursor: pointer;" (click)="openModalDel(template, row.id)"  class="delete">
                           <i class="material-icons">
                           delete
                           </i>
@@ -81,8 +81,8 @@
     </div>
     <div class="modal-footer space">
         <div class="center">
-        <button class="btn btn-secondary" (click)="closedModelDel()" >Cancelar</button>
-        <button class="btn btn-danger" >Excluir</button>
+        <button class="btn btn-secondary" (click)="closedModalDel()" >Cancelar</button>
+        <button class="btn btn-danger" (click)="modDelete()">Excluir</button>
     </div>
     </div>
   </ng-template>

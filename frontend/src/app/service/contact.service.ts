@@ -35,7 +35,7 @@ export class ContactService {
     update(cadastro: Cadastro): Observable<Cadastro>{
         return this.http.put<Cadastro>(`${this.baseUrl}/${cadastro.id}`, cadastro)
     }
-    delete(id: number): Observable<Cadastro>{
-        return this.http.delete<Cadastro>(`${this.baseUrl}/${id}`)
+    delete(cadastro: Cadastro): Observable<Cadastro>{
+        return this.http.delete<Cadastro>(`${this.baseUrl}/${cadastro.id}`)
     }
 }

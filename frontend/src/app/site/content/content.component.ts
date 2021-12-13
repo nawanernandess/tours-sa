@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateRegistrationComponent } from 'src/app/crud-components/create-registration/create-registration.component';
+import { CadastroGuiaComponent } from '../cadastro-guia-component/cadastro-guia.component';
 
 @Component({
   selector: 'app-content',
@@ -15,7 +15,7 @@ export class ContentComponent implements OnInit {
   }
 
   openModCad(){
-    const dialogRef = this.dialog.open(CreateRegistrationComponent, {
+    const dialogRef = this.dialog.open(CadastroGuiaComponent, {
       width: '1000px'
     })
 
