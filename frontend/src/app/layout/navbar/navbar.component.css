@@ -43,6 +43,7 @@ nav .menu{
     visibility: hidden;
     top: -20rem;
     transition: 0.2s;
+    height: 18px;
 }
 nav .menu ul{
     display: none;

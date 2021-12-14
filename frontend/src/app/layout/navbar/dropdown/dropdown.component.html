@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <li><a style="cursor: pointer;" id="dropdownBasic1" ngbDropdownToggle class="title">Mais</a></li>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <li><a ngbDropdownItem class="title" style="cursor: pointer;" (click)="openModCad()">Cadastre-se</a></li>
+        <li><a ngbDropdownItem class="title" mat-list-item routerLink="/lista">Lista de guias</a></li>
+      </div>
+    </div>
+  </div>

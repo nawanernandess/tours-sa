@@ -26,6 +26,8 @@ import { CadastroGuiaComponent } from './site/cadastro-guia-component/cadastro-g
 import { ContentComponent } from './site/content/content.component';
 import { ListaGuiaComponent } from './site/lista-guia-component/lista-guia.component';
 import { UpdateRegistrationModalComponent } from './site/lista-guia-component/update-registration-modal/update-registration-modal.component';
+import { DropdownComponent } from './layout/navbar/dropdown/dropdown.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 
 
@@ -38,8 +40,8 @@ import { UpdateRegistrationModalComponent } from './site/lista-guia-component/up
     CadastroGuiaComponent,
     ContentComponent,
     ListaGuiaComponent,
-
-    UpdateRegistrationModalComponent
+    UpdateRegistrationModalComponent,
+    DropdownComponent
    ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { UpdateRegistrationModalComponent } from './site/lista-guia-component/up
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatSortModule
+    MatSortModule,
+    NgbModule
   ],
   providers: [
     {provide : MAT_DIALOG_DATA, useValue : {}}
