@@ -6,7 +6,7 @@
       <p class="mb-5">
         Transfers, Tours e Passeios com qualidade e pontualidade.
       </p>
-      <button>solicitar cotação</button>
+      <button (click)="openModCad()">solicitar cotação</button>
     </span>
   </div>
 
@@ -51,35 +51,34 @@
 
       <div class="cards grid">
         <div class="card">
-          <span class="material-icons"> group_add </span>
-          <h3 class="title">Cadastre-se</h3>
-          <p>
-            Essa área é para você profissional de turismo, adiciona seu contado
-            e seja achado por um cliente com bastante vontade de viajar!
+          <span class="material-icons"> directions_car </span>
+          <h3 class="title m-0">Transfers</h3>
+          <p class="m-0">
+            Reserve seu transfer com preços acessíveis, conforto e segurança.
+            Serviço rápido, confiável e com atendimento personalizado para
+            garantir sua melhor experiência de viagem.
           </p>
-          <a
-            class="btn-card"
-            (click)="openModCad()"
-            routerLink="/"
-            style="cursor: pointer"
-            >Cadastrar</a
-          >
+          <div class="align-content-center">
+            <a class="btn-card" routerLink="/" style="cursor: pointer"
+              >Ver mais</a
+            >
+          </div>
         </div>
 
         <div class="card">
-          <span class="material-icons"> view_list </span>
-          <h3 class="title">Lista de Guia turístico</h3>
-          <p>
-            Aqui você encontra o profissional qualificado para te orientar em
-            qualquer viagem!
+          <span class="material-icons"> map </span>
+          <h3 class="title m-0">Passeios</h3>
+          <p class="m-0">
+            Explore os melhores destinos com nossos passeios exclusivos!
+            Descubra paisagens deslumbrantes, cultura local e atrações únicas
+            com toda a conveniência e segurança.
           </p>
-          <a
-            class="btn-card pdd"
-            mat-list-item
-            routerLink="/lista"
-            style="cursor: pointer"
-            >Listar</a
-          >
+          <!-- routerLink="/lista" -->
+          <div class="align-content-center">
+            <a class="btn-card" mat-list-item style="cursor: pointer"
+              >Ver mais</a
+            >
+          </div>
         </div>
       </div>
     </div>

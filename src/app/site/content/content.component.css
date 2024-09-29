@@ -50,16 +50,14 @@ button:hover {
   background-color: var(--base-color);
   color: var(--text-color-light);
   height: 3.5rem;
-  display: inline-flex;
+  width: 100px;
+  display: flex;
   align-items: center;
-  padding: 0 5.5rem;
+  justify-content: center;
+  /* padding: 0 5.5rem; */
   border-radius: 0.25rem;
   font: 500 1rem var(--body-font);
   transition: background 0.3s;
-}
-
-.pdd {
-  padding: 0 6.5rem;
 }
 
 /* Layout */
@@ -234,6 +232,7 @@ nav.show div.icon-close {
 }
 
 .card {
+  gap: 16px;
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
@@ -243,13 +242,13 @@ nav.show div.icon-close {
 
 .card span {
   display: block;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   font-size: 5rem;
   color: var(--base-color);
 }
 .card .title {
   font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.75rem; */
 }
 
 /* About */
