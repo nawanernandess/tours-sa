@@ -1,81 +1,66 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --header-height: 4.5rem;
 
-/* html, body { height: 100%; } */
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* Colors */
+  --hue: 210;
 
-    position: relative;
-    /* padding-bottom: 58px; */
-    min-height: 100vh;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 90% 20%);
+  --base-color-second: hsl(var(--hue) 90% 20%);
+  --base-color-alt: hsl(var(--hue) 90% 20%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+
+  /* Fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: "Poppins", sans-serif;
+  --body-font: "DM Sans", sans-serif;
 }
 
-img{
-    width: 100%;
-    height: auto;
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* Variable */
-:root{
-    --header-height: 4.5rem;
-
-    /* Colors */
-    --hue: 210;
-
-    /* HSL color mode */
-    --base-color: hsl(var(--hue) 90% 20%);
-    --base-color-second: hsl(var(--hue) 90% 20%);
-    --base-color-alt: hsl(var(--hue) 90% 20%);
-    --title-color: hsl(var(--hue) 41% 10%);
-    --text-color: hsl(0 0% 46%);
-    --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%);
-
-    /* Fonts */
-    --title-font-size: 1.875rem;
-    --subtitle-font-size: 1rem;
-
-    --title-font:"Poppins", sans-serif;
-    --body-font:"DM Sans", sans-serif;
+img {
+  width: 100%;
 }
 
-/* Divisão em linha */
-.divider-1{
-    height: 1px;
-    background: linear-gradient(
-        270deg,
-        hsla(var(--hue), 36%, 57%, 1) 0%,
-        hsla(var(--hue), 65%, 88%, 0.34) 100%);
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+  );
 }
 
-.divider-2{
-    height: 1px;
-    background: linear-gradient(
-        270deg,
-        hsla(var(--hue), 65%, 88%, 0.34),
-        hsla(var(--hue), 36%, 57%, 1)
-        );
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
 }
 
-/* Logo */
-
-.logo{
-    font: 700 1.31rem var(--title-font);
-    color: var(--title-color);
-    
+.logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--title-color);
 }
 
-.logo span{
-    color:var(--base-color);
+.logo span {
+  color: var(--base-color);
 }
 
-.logo-alt span{
-    color: var(--body-color);
+.logo-alt span {
+  color: var(--body-color);
 }
-a{
-    text-decoration: none;
-    color: black;
+
+a {
+  text-decoration: none;
+  color: black;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
