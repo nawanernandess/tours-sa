@@ -24,8 +24,7 @@ footer .brand p {
   color: var(--text-color-light);
   margin-bottom: 0.75rem;
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 767px) {
   /* Footer */
   .container {
     max-width: 1120px;

@@ -132,6 +132,7 @@
 
 #testimonials blockquote p {
   position: relative;
+  text-align: start;
   text-indent: 1.875rem;
   margin-bottom: 1.5rem;
   color: var(--title-color);
@@ -190,22 +191,16 @@
   margin-right: 0.625rem;
 }
 
-/* #contact ul.grid {
-  gap: 2rem;
-} */
-
-/* #contact ul li {
-  display: flex;
-  align-items: center;
-} */
-
 #contact ul li i {
   color: var(--base-color);
 }
 
-/* .i-email {
-  font-size: 1.5rem;
-} */
+#contact .links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-size: 32px;
+}
 
 #contact .links .social a {
   margin-right: 2rem;
@@ -219,6 +214,14 @@
 
 /* Responsive - Media Queries */
 @media (min-width: 767px) {
+  .align-text-start {
+    text-align: start;
+  }
+
+  .links {
+    justify-content: start !important;
+  }
+
   .section {
     padding: 10rem 0;
   }

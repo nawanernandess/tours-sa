@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -42,6 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BsDropdownModule,
