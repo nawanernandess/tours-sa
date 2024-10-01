@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +28,11 @@ import { ListaGuiaComponent } from './site/lista-guia-component/lista-guia.compo
 import { UpdateRegistrationModalComponent } from './site/lista-guia-component/update-registration-modal/update-registration-modal.component';
 import { DropdownComponent } from './layout/navbar/dropdown/dropdown.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @NgModule({
   declarations: [
@@ -63,5 +68,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

@@ -1,3 +1,7 @@
+swiper-container::part(bullet-active) {
+  background-color: var(--base-color);
+}
+
 /* Base */
 .grid {
   display: grid;
@@ -8,6 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.size-icon {
+  font-size: 4rem;
+  color: var(--base-color);
 }
 
 .center-t {

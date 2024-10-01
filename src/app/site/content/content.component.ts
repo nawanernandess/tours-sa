@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroGuiaComponent } from '../cadastro-guia-component/cadastro-guia.component';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faCar, faEnvelope, faMap } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-content',
@@ -9,6 +9,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./content.component.css'],
 })
 export class ContentComponent implements OnInit {
+  car = faCar;
+  map = faMap;
   envelope = faEnvelope;
 
   constructor(public dialog: MatDialog) {}

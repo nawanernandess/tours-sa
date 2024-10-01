@@ -37,7 +37,7 @@
 
       <div class="cards grid">
         <div class="card">
-          <span class="material-icons"> directions_car </span>
+          <fa-icon class="size-icon" [icon]="car"></fa-icon>
           <h3 class="title m-0">Transfers</h3>
           <p class="m-0">
             Reserve seu transfer com preços acessíveis, conforto e segurança.
@@ -52,7 +52,8 @@
         </div>
 
         <div class="card">
-          <span class="material-icons"> map </span>
+          <!-- <span class="material-icons"> map </span> -->
+          <fa-icon class="size-icon" [icon]="map"></fa-icon>
           <h3 class="title m-0">Passeios</h3>
           <p class="m-0">
             Explore os melhores destinos com nossos passeios exclusivos!
@@ -111,10 +112,15 @@
   <div class="align-content-center">
     <div class="center-t">
       <h2 class="title m-0">Depoimentos</h2>
-
-      <div class="testimonials swiper">
-        <div class="swiper-wrapper">
-          <div class="testimonial swiper-slide">
+      <swiper-container
+        autoplay="true"
+        speed="800"
+        loop="true"
+        pagination="true"
+        pagination-clickable="true"
+      >
+        <swiper-slide>
+          <div class="swiper-slide">
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -128,8 +134,10 @@
               </cite>
             </blockquote>
           </div>
+        </swiper-slide>
 
-          <div class="testimonial swiper-slide">
+        <swiper-slide>
+          <div class="swiper-slide">
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -142,8 +150,10 @@
               </cite>
             </blockquote>
           </div>
+        </swiper-slide>
 
-          <div class="testimonial swiper-slide">
+        <swiper-slide>
+          <div class="swiper-slide">
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -156,9 +166,8 @@
               </cite>
             </blockquote>
           </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+        </swiper-slide>
+      </swiper-container>
     </div>
   </div>
 </section>
