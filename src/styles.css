@@ -21,8 +21,16 @@
   --body-font: "DM Sans", sans-serif;
 }
 
-* {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+button {
+  font-family: var(--title-font) !important;
 }
 
 img {
@@ -47,6 +55,41 @@ img {
   );
 }
 
+.section {
+  padding: calc(5rem + var(--header-height)) 0;
+}
+
+.title {
+  font: 700 1.875rem var(--title-font) !important;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.content-alignment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-in-center {
+  width: 100%;
+  text-align: center;
+  max-width: 1080px;
+  padding: 0 16px;
+}
+
+.content-div-alignment {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.size-icon-in-content {
+  font-size: 4rem;
+  color: var(--base-color);
+}
+
 .logo {
   font: 700 1.31rem var(--title-font);
   color: var(--title-color);
@@ -63,4 +106,14 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
+
+@media (min-width: 767px) {
+  .content-div-alignment {
+    flex-direction: row;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
 }

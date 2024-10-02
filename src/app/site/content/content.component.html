@@ -1,7 +1,7 @@
 <!-- Home  -->
-<section id="home">
-  <div class="first-fold">
-    <span class="title-group">
+<section class="position-relative" id="home">
+  <div class="first-fold content-alignment">
+    <span class="content-in-center">
       <h3>venha para a tours</h3>
       <p class="mb-5">
         Transfers, Tours e Passeios com qualidade e pontualidade.
@@ -20,11 +20,11 @@
 
 <!-- Services   -->
 <section class="section" id="inicio">
-  <div class="align-content-center">
-    <div class="center-t">
+  <div class="content-alignment">
+    <div class="content-in-center">
       <div class="mb-5">
-        <fa-icon class="size-icon" [icon]="planeDerpature"></fa-icon>
-        <h2 class="mt-4">Conheça nosso pacotes</h2>
+        <fa-icon class="size-icon-in-content" [icon]="planeDerpature"></fa-icon>
+        <h2 class="title mt-4">Conheça nosso pacotes</h2>
         <span>
           Passeio turístico para clientes particulares, empresas ou grupos.
         </span>
@@ -33,36 +33,41 @@
           profissionalismo, segurança, pontualidade e qualidade de atendimento.
         </p>
 
-        <h2 class="mb-0">Serviço</h2>
+        <h2 class="title mb-0">Serviço</h2>
       </div>
 
-      <div class="cards grid">
+      <div class="content-div-alignment">
         <div class="card">
-          <fa-icon class="size-icon" [icon]="car"></fa-icon>
+          <fa-icon class="size-icon-in-content" [icon]="car"></fa-icon>
           <h3 class="title m-0">Transfers</h3>
           <p class="m-0">
             Reserve seu transfer com preços acessíveis, conforto e segurança.
             Serviço rápido, confiável e com atendimento personalizado para
             garantir sua melhor experiência de viagem.
           </p>
-          <div class="align-content-center">
-            <a class="btn-card" routerLink="/" style="cursor: pointer"
+          <div class="content-alignment">
+            <a
+              class="btn-card content-alignment"
+              routerLink="/"
+              style="cursor: pointer"
               >Ver mais</a
             >
           </div>
         </div>
 
         <div class="card">
-          <!-- <span class="material-icons"> map </span> -->
-          <fa-icon class="size-icon" [icon]="map"></fa-icon>
+          <fa-icon class="size-icon-in-content" [icon]="map"></fa-icon>
           <h3 class="title m-0">Passeios</h3>
           <p class="m-0">
             Explore os melhores destinos com nossos passeios exclusivos!
             Descubra paisagens deslumbrantes, cultura local e atrações únicas
             com toda a conveniência e segurança.
           </p>
-          <div class="align-content-center">
-            <a class="btn-card" mat-list-item style="cursor: pointer"
+          <div class="content-alignment">
+            <a
+              class="btn-card content-alignment"
+              mat-list-item
+              style="cursor: pointer"
               >Ver mais</a
             >
           </div>
@@ -76,8 +81,8 @@
 
 <!-- About  -->
 <section class="section" id="about">
-  <div class="align-content-center">
-    <div class="center-t about-align grid">
+  <div class="content-alignment">
+    <div class="content-div-alignment content-in-center">
       <div class="text">
         <h2 class="title">Sobre Nós</h2>
         <p>
@@ -98,6 +103,7 @@
 
       <div class="image">
         <img
+          class="rounded"
           src="https://www.viajeparaisrael.com.br/wp-content/uploads/2019/05/9da848ae1772606332d5a6fb114e2ee8.jpg"
           alt="Dubai"
         />
@@ -110,8 +116,8 @@
 
 <!-- Testimonials   -->
 <section class="section" id="testimonials">
-  <div class="align-content-center">
-    <div class="center-t">
+  <div class="content-alignment">
+    <div class="content-in-center">
       <h2 class="title m-0">Depoimentos</h2>
       <swiper-container
         autoplay="true"
@@ -121,7 +127,7 @@
         pagination-clickable="true"
       >
         <swiper-slide>
-          <div class="swiper-slide">
+          <div>
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -138,7 +144,7 @@
         </swiper-slide>
 
         <swiper-slide>
-          <div class="swiper-slide">
+          <div>
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -154,7 +160,7 @@
         </swiper-slide>
 
         <swiper-slide>
-          <div class="swiper-slide">
+          <div>
             <blockquote>
               <p>
                 <span>&ldquo;</span>

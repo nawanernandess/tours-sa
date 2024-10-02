@@ -1,95 +1,26 @@
-/* Base */
-.grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.align-content-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.size-icon {
-  font-size: 4rem;
-  color: var(--base-color);
-}
-
-.center-t {
-  width: 100%;
-  text-align: center;
-  max-width: 1080px;
-  padding: 0 16px;
-}
-
-.title {
-  font: 700 1.875rem var(--title-font);
-  color: var(--title-color);
-  -webkit-font-smoothing: auto;
-}
-
-.btn-card {
-  background-color: var(--base-color);
-  color: var(--text-color-light);
-  height: 3.5rem;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.25rem;
-  font: 500 1rem var(--body-font);
-  transition: background 0.3s;
-}
-
-/* Layout */
-.section {
-  padding: calc(5rem + var(--header-height)) 0;
-}
-
-.section .title {
-  margin-bottom: 1rem;
-}
-
-.section .subtitle {
-  font-size: var(--subtitle-font-size);
-}
-
 /* Home */
-#home {
-  position: relative;
-}
-
 #home .first-fold {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-#home .first-fold .title-group {
-  text-align: center;
-  max-width: 1080px;
-  padding: 0 16px;
-}
-
-#home .first-fold .title-group h3 {
-  text-transform: uppercase;
-  font-size: 18px;
-  text-decoration: underline;
+#home .first-fold h3 {
   color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
-#home .first-fold .title-group p {
+#home .first-fold p {
   color: white;
   font-weight: bold;
   font-size: 46px;
   line-height: 60px;
 }
 
-#home .first-fold .title-group button {
+#home .first-fold button {
   background: transparent;
   text-transform: uppercase;
   color: white;
@@ -97,6 +28,11 @@
   border-radius: 10px;
   padding: 16px;
   font-size: 16px;
+}
+
+#home .first-fold button:hover {
+  color: var(--title-color);
+  background-color: #fff;
 }
 
 #home .first-fold-img {
@@ -107,25 +43,20 @@
 /* Services */
 .card {
   gap: 16px;
-  padding: 3.625rem 2rem;
+  padding: 3rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
 }
 
-.card span {
-  font-size: 5rem;
-  color: var(--base-color);
-}
-
-.card .title {
-  font-size: 1.5rem;
-}
-
-/* About */
-#about .image img {
+.btn-card {
+  width: 100px;
+  height: 3.5rem;
   border-radius: 0.25rem;
+  color: var(--text-color-light);
+  font: 500 1rem var(--title-font);
+  background-color: var(--base-color);
 }
 
 /* Testimonials */
@@ -151,13 +82,13 @@
   color: var(--base-color);
 }
 
-#testimonials cite {
+#testimonials blockquote cite {
   display: flex;
   align-items: center;
   font-style: normal;
 }
 
-#testimonials cite img {
+#testimonials blockquote cite img {
   width: 2rem;
   height: 2rem;
   object-fit: cover;
@@ -166,35 +97,11 @@
 }
 
 /* Swiper */
-.swiper-slide {
+swiper-slide {
   height: auto;
   padding: 4rem 1rem;
 }
 
 swiper-container::part(bullet-active) {
   background-color: var(--base-color);
-}
-
-@media (min-width: 767px) {
-  .align-text-start {
-    text-align: start;
-  }
-
-  .links {
-    justify-content: start !important;
-  }
-
-  .section {
-    padding: 10rem 0;
-  }
-
-  .about-align,
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
 }

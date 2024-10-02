@@ -1,4 +1,4 @@
-*{
-    font: 400 1rem var(--body-font);
-    -webkit-font-smoothing: antialiased;
+.nav-title {
+  font: 400 1rem var(--title-font);
+  -webkit-font-smoothing: antialiased;
 }
