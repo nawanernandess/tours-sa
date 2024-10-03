@@ -60,13 +60,13 @@
 }
 
 /* Testimonials */
-#testimonials blockquote {
+#review blockquote {
   padding: 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
 }
 
-#testimonials blockquote p {
+#review blockquote p {
   position: relative;
   text-align: start;
   text-indent: 1.875rem;
@@ -74,7 +74,7 @@
   color: var(--title-color);
 }
 
-#testimonials blockquote p span {
+#review blockquote p span {
   font: 700 2.5rem serif;
   position: absolute;
   top: -0.375rem;
@@ -82,13 +82,13 @@
   color: var(--base-color);
 }
 
-#testimonials blockquote cite {
+#review blockquote cite {
   display: flex;
   align-items: center;
   font-style: normal;
 }
 
-#testimonials blockquote cite img {
+#review blockquote cite img {
   width: 2rem;
   height: 2rem;
   object-fit: cover;

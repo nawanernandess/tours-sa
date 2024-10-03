@@ -7,6 +7,7 @@ import {
   faMap,
   faPlaneDeparture,
 } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -18,7 +19,7 @@ export class ContentComponent implements OnInit {
   map = faMap;
   planeDerpature = faPlaneDeparture;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private _Router: Router) {}
 
   ngOnInit() {}
 
