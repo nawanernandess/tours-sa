@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { CadastroGuiaComponent } from '../cadastro-guia-component/cadastro-guia.component';
 import {
   faCar,
-  faEnvelope,
   faMap,
   faPlaneDeparture,
 } from '@fortawesome/free-solid-svg-icons';
@@ -19,17 +16,9 @@ export class ContentComponent implements OnInit {
   map = faMap;
   planeDerpature = faPlaneDeparture;
 
-  constructor(public dialog: MatDialog, private _Router: Router) {}
+  constructor(private _Router: Router) {}
 
   ngOnInit() {}
-
-  openModCad() {
-    const dialogRef = this.dialog.open(CadastroGuiaComponent, {
-      width: '1000px',
-    });
-
-    dialogRef.afterClosed().subscribe();
-  }
 
   navigateToRegisterContact() {
     this._Router.navigateByUrl('contato');

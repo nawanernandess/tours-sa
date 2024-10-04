@@ -50,6 +50,7 @@ nav .menu ul {
 nav ul li a {
   transition: color 0.2s;
   position: relative;
+  cursor: pointer;
 }
 
 nav ul li a:hover,

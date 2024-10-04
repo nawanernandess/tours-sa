@@ -1,23 +1,27 @@
-#contact {
+.contact {
   background-color: #ededed;
 }
 
-#contact ul {
+.contact ul {
   margin: 0;
   padding: 0;
 }
 
-#contact ul li {
+.contact ul li {
   list-style-type: none;
 }
 
-#contact ul li i {
+.contact ul li a {
+  cursor: pointer;
+}
+
+.contact ul li i {
   color: var(--base-color);
   font-size: 1.5rem;
   margin-right: 0.625rem;
 }
 
-#contact .links {
+.contact .links {
   display: flex;
   justify-content: center;
   font-size: 32px;
@@ -47,7 +51,7 @@ footer .logo {
 }
 
 @media (min-width: 767px) {
-  #contact .text {
+  .contact .text {
     max-width: 25rem;
   }
 

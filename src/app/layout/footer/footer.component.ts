@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,7 +10,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
   envelope = faEnvelope;
 
-  constructor() {}
+  constructor(private _Router: Router) {}
 
   ngOnInit() {}
+
+  navigateToRegisterContact() {
+    this._Router.navigateByUrl('contato');
+  }
 }
