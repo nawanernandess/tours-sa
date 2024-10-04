@@ -18,7 +18,7 @@
             id="name"
             name="name"
             class="form-control"
-            [(ngModel)]="cadastro.name"
+            [(ngModel)]="contact.name"
           />
         </div>
 
@@ -29,7 +29,7 @@
             id="email"
             name="email"
             class="form-control"
-            [(ngModel)]="cadastro.email"
+            [(ngModel)]="contact.email"
           />
         </div>
 
@@ -40,7 +40,7 @@
             id="question"
             name="question"
             class="form-control"
-            [(ngModel)]="cadastro.question"
+            [(ngModel)]="contact.question"
           />
         </div>
 
@@ -52,7 +52,7 @@
             name="phone"
             type="tel"
             class="form-control"
-            [(ngModel)]="cadastro.phone"
+            [(ngModel)]="contact.phone"
           />
         </div>
 
@@ -63,10 +63,10 @@
           >
           <textarea
             matInput
-            class="form-control"
+            class="form-control heigth-of-textarea"
             name="note"
             id="note"
-            [(ngModel)]="cadastro.note"
+            [(ngModel)]="contact.note"
           ></textarea>
         </div>
 

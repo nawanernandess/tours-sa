@@ -28,3 +28,7 @@
   padding: 15px 40px;
   text-transform: uppercase;
 }
+
+.contact-space .heigth-of-textarea {
+  height: 300px;
+}

@@ -1,31 +1,20 @@
 {
-  "cadastro": [
+  "contact": [
     {
       "id": 1,
-      "nome": "silvio",
-      "sobrenome": "santos",
-      "email": "silvio@santos.com",
-      "telefone": "21100000",
-      "valor": "6",
-      "desconto": "9"
+      "name": "Vincent Van Gogh",
+      "email": "vangoghart@gmail.com",
+      "question": "Lorem",
+      "phone": "(21) 97250-3577",
+      "note": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
     },
     {
       "id": 2,
-      "nome": "teste",
-      "sobrenome": "teste",
-      "email": "teste@teste.com",
-      "telefone": "5521972",
-      "valor": "8",
-      "desconto": "1"
-    },
-    {
-      "id": 3,
-      "nome": "teste2",
-      "sobrenome": "teste2",
-      "email": "teste2@teste2.com",
-      "telefone": "08000",
-      "valor": "10",
-      "desconto": "2"
+      "name": "Teste",
+      "email": "teste@gmail.com",
+      "question": "teste",
+      "phone": "21999999999",
+      "note": "Testando o envio das informações para contato."
     }
   ]
 }

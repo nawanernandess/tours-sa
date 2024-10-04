@@ -21,7 +21,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './site/home/home.component';
-import { CadastroGuiaComponent } from './site/cadastro-guia-component/cadastro-guia.component';
+import { ContactComponent } from './site/contact/contact.component';
 import { ContentComponent } from './site/content/content.component';
 
 import { register } from 'swiper/element/bundle';
@@ -33,7 +33,7 @@ register();
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    CadastroGuiaComponent,
+    ContactComponent,
     ContentComponent,
   ],
   imports: [

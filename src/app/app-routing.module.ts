@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ContentComponent } from './site/content/content.component';
-import { CadastroGuiaComponent } from './site/cadastro-guia-component/cadastro-guia.component';
+import { ContactComponent } from './site/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'contato',
-    component: CadastroGuiaComponent,
+    component: ContactComponent,
   },
 ];
 
