@@ -28,10 +28,8 @@ import { ListaGuiaComponent } from './site/lista-guia-component/lista-guia.compo
 import { UpdateRegistrationModalComponent } from './site/lista-guia-component/update-registration-modal/update-registration-modal.component';
 import { DropdownComponent } from './layout/navbar/dropdown/dropdown.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-// import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
-// register Swiper custom elements
+
 register();
 
 @NgModule({

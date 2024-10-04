@@ -35,9 +35,12 @@
   background-color: #fff;
 }
 
-#home .first-fold-img {
-  width: 100%;
-  height: calc(100vh - 100px);
+.first-fold-img {
+  height: 88vh;
+  background-image: url(https://ik.imagekit.io/tvlk/xpe-asset/pBy2pGRnuQ93NrqAiyHztr2w548HhFpVx8GZBQMveNs=/images/content/original/985a15c4-440f-4192-8ef0-5d7a3abe70ee.jpg?tr=q-60,c-at_max,w-720,h-1280&_src=imagekit);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
 /* Services */

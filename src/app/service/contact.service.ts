@@ -1,4 +1,4 @@
-import { Cadastro } from './../model/cadastro.model';
+import { Contact } from '../model/contact.model';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -6,36 +6,34 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ContactService {
-    
-    constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
-    baseUrl: string = environment.cadBaseUrl
+  baseUrl: string = environment.cadBaseUrl;
 
-    showMessage(msg: string): void{
-        this.snackBar.open(msg, 'x', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-        })
-    }
+  showMessage(msg: string): void {
+    this.snackBar.open(msg, 'x', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+  }
 
-    create(cadastro: Cadastro): Observable<Cadastro>{
-        return this.http.post<Cadastro>(this.baseUrl, cadastro)
-    }
-    read(): Observable<Cadastro[]>{
-        return this.http.get<Cadastro[]>(this.baseUrl)
-    }
-    readById(id: number): Observable<Cadastro> {
-        return this.http.get<Cadastro>(`${this.baseUrl}/${id}`)
-    }
-    update(cadastro: Cadastro): Observable<Cadastro>{
-        return this.http.put<Cadastro>(`${this.baseUrl}/${cadastro.id}`, cadastro)
-    }
-    delete(cadastro: Cadastro): Observable<Cadastro>{
-        return this.http.delete<Cadastro>(`${this.baseUrl}/${cadastro.id}`)
-    }
+  create(cadastro: Contact): Observable<Contact> {
+    return this.http.post<Contact>(this.baseUrl, cadastro);
+  }
+  read(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(this.baseUrl);
+  }
+  readById(id: number): Observable<Contact> {
+    return this.http.get<Contact>(`${this.baseUrl}/${id}`);
+  }
+  update(cadastro: Contact): Observable<Contact> {
+    return this.http.put<Contact>(`${this.baseUrl}/${cadastro.id}`, cadastro);
+  }
+  delete(cadastro: Contact): Observable<Contact> {
+    return this.http.delete<Contact>(`${this.baseUrl}/${cadastro.id}`);
+  }
 }

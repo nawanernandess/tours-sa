@@ -30,4 +30,8 @@ export class ContentComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe();
   }
+
+  navigateToRegisterContact() {
+    this._Router.navigateByUrl('contato');
+  }
 }
