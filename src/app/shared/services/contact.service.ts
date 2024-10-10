@@ -1,5 +1,5 @@
-import { Contact } from '../model/contact.model';
-import { environment } from './../../environments/environment';
+import { Contact } from '../../core/models/contact.model';
+import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
