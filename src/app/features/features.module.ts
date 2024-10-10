@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { ContentNavigationComponent } from './content-navigation/content-navigation.component';
 import { HomeComponent } from './home/home.component';
-import { ContentComponent } from './content/content.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
@@ -10,9 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 register();
 
 @NgModule({
-  declarations: [HomeComponent, ContentComponent, ContactComponent],
+  declarations: [ContentNavigationComponent, HomeComponent, ContactComponent],
   imports: [AppRoutingModule, FormsModule, SharedModule],
-  exports: [HomeComponent],
+  exports: [ContentNavigationComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule {}

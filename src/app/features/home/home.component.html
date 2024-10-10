@@ -1,3 +1,174 @@
-<div class="total">
-  <router-outlet></router-outlet>
-</div>
+<!-- Home  -->
+<section class="position-relative first-fold-img" id="home">
+  <div class="first-fold content-alignment">
+    <span class="content-in-center">
+      <h3>venha para a tours-sa</h3>
+      <p class="mb-5">
+        Transfers, Tours e Passeios com qualidade e pontualidade.
+      </p>
+      <button (click)="navigateToRegisterContact()">solicitar cotação</button>
+    </span>
+  </div>
+</section>
+
+<div class="divider-1"></div>
+
+<!-- Services   -->
+<section class="section" id="start">
+  <div class="content-alignment">
+    <div class="content-in-center">
+      <div class="mb-5">
+        <fa-icon class="size-icon-in-content" [icon]="planeDerpature"></fa-icon>
+        <h2 class="title mt-4">Conheça nosso pacotes</h2>
+        <span>
+          Passeio turístico para clientes particulares, empresas ou grupos.
+        </span>
+        <p class="mb-5">
+          Nossa missão é conduzir nosso cliente para seu destino com
+          profissionalismo, segurança, pontualidade e qualidade de atendimento.
+        </p>
+
+        <h2 class="title mb-0">Serviço</h2>
+      </div>
+
+      <div class="content-div-alignment">
+        <div class="card">
+          <fa-icon class="size-icon-in-content" [icon]="car"></fa-icon>
+          <h3 class="title m-0">Transfers</h3>
+          <p class="m-0">
+            Reserve seu transfer com preços acessíveis, conforto e segurança.
+            Serviço rápido, confiável e com atendimento personalizado para
+            garantir sua melhor experiência de viagem.
+          </p>
+          <div class="content-alignment">
+            <a
+              class="btn-card content-alignment"
+              routerLink="/"
+              style="cursor: pointer"
+              >Ver mais</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <fa-icon class="size-icon-in-content" [icon]="map"></fa-icon>
+          <h3 class="title m-0">Passeios</h3>
+          <p class="m-0">
+            Explore os melhores destinos com nossos passeios exclusivos!
+            Descubra paisagens deslumbrantes, cultura local e atrações únicas
+            com toda a conveniência e segurança.
+          </p>
+          <div class="content-alignment">
+            <a
+              class="btn-card content-alignment"
+              mat-list-item
+              style="cursor: pointer"
+              >Ver mais</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-2"></div>
+
+<!-- About  -->
+<section class="section" id="about">
+  <div class="content-alignment">
+    <div class="content-div-alignment content-in-center">
+      <div class="text">
+        <h2 class="title">Sobre Nós</h2>
+        <p>
+          Somos uma empresa especializada em transporte privado, traslados,
+          passeios e city tour personalizados com um jeito fácil e econômico.
+          Contamos com profissionais experientes e acolhedores, que fará da sua
+          experiência inesquecível.
+        </p>
+        <br />
+        <p>
+          Nossa frota conta com veículos especializados de acordo com a sua
+          necessidade. Todos os nossos veículos são totalmente limpos e
+          higienizados antes de cada cliente. Revisados e inspecionados a cada
+          seis meses obrigatoriamente testados e licenciados.<br />
+        </p>
+      </div>
+
+      <div class="image">
+        <img
+          class="rounded"
+          src="https://www.viajeparaisrael.com.br/wp-content/uploads/2019/05/9da848ae1772606332d5a6fb114e2ee8.jpg"
+          alt="Dubai"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-1"></div>
+
+<!-- Testimonials   -->
+<section class="section" id="review">
+  <div class="content-alignment">
+    <div class="content-in-center">
+      <h2 class="title m-0">Depoimentos</h2>
+      <swiper-container
+        autoplay="true"
+        speed="800"
+        loop="true"
+        pagination="true"
+        pagination-clickable="true"
+      >
+        <swiper-slide>
+          <div>
+            <blockquote>
+              <p>
+                <span>&ldquo;</span>
+                Tive uma experiêcia incrível com o profissional cadastrado nessa
+                plataforma, vale muito a pena para quem está atrás de um guia!
+              </p>
+
+              <cite>
+                <img src="###" alt="Foto cliente" />
+                Cliente
+              </cite>
+            </blockquote>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div>
+            <blockquote>
+              <p>
+                <span>&ldquo;</span>
+                ????????
+              </p>
+
+              <cite>
+                <img src="###" alt="Foto cliente" />
+                cliente
+              </cite>
+            </blockquote>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div>
+            <blockquote>
+              <p>
+                <span>&ldquo;</span>
+                ????????
+              </p>
+
+              <cite>
+                <img src="###" alt="Foto cliente" />
+                cliente
+              </cite>
+            </blockquote>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+</section>
