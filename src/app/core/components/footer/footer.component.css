@@ -1,3 +1,9 @@
+.footer-title,
+.contact ul li a,
+.contact .links a {
+  color: #696969;
+}
+
 .contact {
   background-color: #ededed;
 }
@@ -13,24 +19,28 @@
 
 .contact ul li a {
   cursor: pointer;
-}
-
-.contact ul li i {
-  color: var(--base-color);
-  font-size: 1.5rem;
-  margin-right: 0.625rem;
+  font-size: 12px;
 }
 
 .contact .links {
   display: flex;
   justify-content: center;
-  font-size: 32px;
+  font-size: 28px;
   gap: 28px;
 }
 
-.logo-color span {
-  color: black !important;
-  font-size: 32px;
+.contact .logo .logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.contact .logo .logo-img .logo-img-size {
+  width: 300px;
+  height: 300px;
 }
 
 footer {
@@ -51,6 +61,10 @@ footer .logo {
 }
 
 @media (min-width: 767px) {
+  .footer-title {
+    font-size: 16px !important;
+  }
+
   .contact .text {
     max-width: 25rem;
   }
