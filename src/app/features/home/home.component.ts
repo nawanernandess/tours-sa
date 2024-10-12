@@ -16,6 +16,12 @@ export class HomeComponent implements OnInit {
   map = faMap;
   planeDerpature = faPlaneDeparture;
 
+  descriptionTransfer: string =
+    'Reserve seu transfer com preços acessíveis, conforto e segurança. Serviço rápido, confiável e com atendimento personalizado para garantir sua melhor experiência de viagem.';
+
+  descriptionTours: string =
+    'Explore os melhores destinos com nossos passeios exclusivos! Descubra paisagens deslumbrantes, cultura local e atrações únicas com toda a conveniência e segurança.';
+
   constructor(private _Router: Router) {}
 
   ngOnInit() {}

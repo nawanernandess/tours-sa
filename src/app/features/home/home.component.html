@@ -32,41 +32,17 @@
       </div>
 
       <div class="content-div-alignment">
-        <div class="card">
-          <fa-icon class="size-icon-in-content" [icon]="car"></fa-icon>
-          <h3 class="title m-0">Transfers</h3>
-          <p class="m-0">
-            Reserve seu transfer com preços acessíveis, conforto e segurança.
-            Serviço rápido, confiável e com atendimento personalizado para
-            garantir sua melhor experiência de viagem.
-          </p>
-          <div class="content-alignment">
-            <a
-              class="btn-card content-alignment"
-              routerLink="/"
-              style="cursor: pointer"
-              >Ver mais</a
-            >
-          </div>
-        </div>
+        <app-card
+          title="Transfers"
+          [icon]="car"
+          [description]="descriptionTransfer"
+        ></app-card>
 
-        <div class="card">
-          <fa-icon class="size-icon-in-content" [icon]="map"></fa-icon>
-          <h3 class="title m-0">Passeios</h3>
-          <p class="m-0">
-            Explore os melhores destinos com nossos passeios exclusivos!
-            Descubra paisagens deslumbrantes, cultura local e atrações únicas
-            com toda a conveniência e segurança.
-          </p>
-          <div class="content-alignment">
-            <a
-              class="btn-card content-alignment"
-              mat-list-item
-              style="cursor: pointer"
-              >Ver mais</a
-            >
-          </div>
-        </div>
+        <app-card
+          title="Passeios"
+          [icon]="map"
+          [description]="descriptionTours"
+        ></app-card>
       </div>
     </div>
   </div>
@@ -114,14 +90,14 @@
     <div class="content-in-center">
       <h2 class="title m-0">Depoimentos</h2>
       <swiper-container
-        autoplay="true"
+        autoplay="false"
         speed="800"
         loop="true"
         pagination="true"
         pagination-clickable="true"
       >
         <swiper-slide>
-          <div>
+          <!-- <div>
             <blockquote>
               <p>
                 <span>&ldquo;</span>
@@ -134,10 +110,11 @@
                 Cliente
               </cite>
             </blockquote>
-          </div>
+          </div> -->
+          <app-swiper></app-swiper>
         </swiper-slide>
 
-        <swiper-slide>
+        <!-- <swiper-slide>
           <div>
             <blockquote>
               <p>
@@ -167,7 +144,7 @@
               </cite>
             </blockquote>
           </div>
-        </swiper-slide>
+        </swiper-slide> -->
       </swiper-container>
     </div>
   </div>
