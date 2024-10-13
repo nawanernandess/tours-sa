@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faQuoteLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-swiper',
   template: `
     <div class="blockquote">
-      <fa-icon [icon]="quote"></fa-icon>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo asperiores
-        reiciendis neque explicabo suscipit tempore! Voluptates minima nostrum
-        ex perferendis necessitatibus veniam, enim deserunt facere placeat,
-        illum quae, quam eveniet.
-      </p>
+      <fa-icon class="quote-icon" [icon]="quote"></fa-icon>
+      <p>{{ quoteText }}</p>
 
       <div class="cite">
-        <img src="###" alt="Foto cliente" />
+        <img [src]="image" alt="Foto" />
         <div class="customer">
-          <span>Nome do cliente</span>
-          <span>Função do cliente</span>
+          <span class="customer-name">{{ name }}</span>
+          <span class="customer-role">{{ role }}</span>
         </div>
       </div>
     </div>
@@ -25,7 +20,16 @@ import { faQuoteLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./swiper.component.css'],
 })
 export class SwiperComponent implements OnInit {
+  @Input() image: string;
+
+  @Input() name: string;
+
+  @Input() role: string;
+
+  @Input() quoteText: string;
+
   quote: IconDefinition = faQuoteLeft;
+
   constructor() {}
 
   ngOnInit(): void {}

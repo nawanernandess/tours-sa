@@ -4,9 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 import { register } from 'swiper/element/bundle';
-import { SharedModule } from '../shared/shared.module';
 register();
 
 @NgModule({

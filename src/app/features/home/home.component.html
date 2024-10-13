@@ -90,61 +90,38 @@
     <div class="content-in-center">
       <h2 class="title m-0">Depoimentos</h2>
       <swiper-container
-        autoplay="false"
+        autoplay="true"
         speed="800"
         loop="true"
         pagination="true"
         pagination-clickable="true"
       >
         <swiper-slide>
-          <!-- <div>
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>
-                Tive uma experiêcia incrível com o profissional cadastrado nessa
-                plataforma, vale muito a pena para quem está atrás de um guia!
-              </p>
-
-              <cite>
-                <img src="###" alt="Foto cliente" />
-                Cliente
-              </cite>
-            </blockquote>
-          </div> -->
-          <app-swiper></app-swiper>
-        </swiper-slide>
-
-        <!-- <swiper-slide>
-          <div>
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>
-                ????????
-              </p>
-
-              <cite>
-                <img src="###" alt="Foto cliente" />
-                cliente
-              </cite>
-            </blockquote>
-          </div>
+          <app-swiper
+            image="../../../assets/img/face-1.jpeg"
+            [quoteText]="lorem"
+            name="Amanda Froes"
+            role="Influencer"
+          ></app-swiper>
         </swiper-slide>
 
         <swiper-slide>
-          <div>
-            <blockquote>
-              <p>
-                <span>&ldquo;</span>
-                ????????
-              </p>
+          <app-swiper
+            image="../../../assets/img/face-3.jpeg"
+            [quoteText]="lorem"
+            name="Leonardo Almeida"
+            role="Vídeo Makers"
+          ></app-swiper>
+        </swiper-slide>
 
-              <cite>
-                <img src="###" alt="Foto cliente" />
-                cliente
-              </cite>
-            </blockquote>
-          </div>
-        </swiper-slide> -->
+        <swiper-slide>
+          <app-swiper
+            image="../../../assets/img/face-2.jpeg"
+            [quoteText]="lorem"
+            name="Julia Ribeiro"
+            role="Designer"
+          ></app-swiper>
+        </swiper-slide>
       </swiper-container>
     </div>
   </div>

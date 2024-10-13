@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit {
   descriptionTours: string =
     'Explore os melhores destinos com nossos passeios exclusivos! Descubra paisagens deslumbrantes, cultura local e atrações únicas com toda a conveniência e segurança.';
 
+  lorem: string =
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo asperiores reiciendis neque explicabo suscipit tempore! Voluptates minima nostrum ex perferendis necessitatibus veniam, enim deserunt facere placeat, illum quae, quam eveniet.';
+
   constructor(private _Router: Router) {}
 
   ngOnInit() {}
