@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { SwiperComponent } from './components/swiper/swiper.component';
     MatSnackBarModule,
     MatToolbarModule,
   ],
-  declarations: [CardComponent, SwiperComponent],
+  declarations: [CardComponent, SwiperComponent, AvatarComponent],
   exports: [
     HttpClientModule,
     BrowserModule,
@@ -26,6 +27,7 @@ import { SwiperComponent } from './components/swiper/swiper.component';
     FontAwesomeModule,
     CardComponent,
     SwiperComponent,
+    AvatarComponent,
   ],
 })
 export class SharedModule {}

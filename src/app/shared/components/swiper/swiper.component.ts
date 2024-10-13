@@ -9,7 +9,7 @@ import { faQuoteLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
       <p>{{ quoteText }}</p>
 
       <div class="cite">
-        <img [src]="image" alt="Foto" />
+        <app-avatar size="profile" [avatar]="image"></app-avatar>
         <div class="customer">
           <span class="customer-name">{{ name }}</span>
           <span class="customer-role">{{ role }}</span>

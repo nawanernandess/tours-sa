@@ -21,12 +21,6 @@
   align-items: center;
 }
 
-.blockquote .cite img {
-  width: 5rem;
-  height: 5rem;
-  clip-path: circle();
-}
-
 .blockquote .cite .customer {
   display: flex;
   text-align: start;
