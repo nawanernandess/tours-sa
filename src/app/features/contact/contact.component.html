@@ -1,4 +1,4 @@
-<section class="position-relative contact-background" id="home">
+<section class="position-relative contact-background">
   <div class="first-fold content-alignment">
     <span class="content-in-center">
       <p>Contatos</p>
@@ -9,21 +9,33 @@
 <section class="contact-space">
   <div class="content-alignment">
     <div class="content-in-center text-start">
-      <span class="fw-bold">Campos marcados com * são requeridos</span>
-      <form class="mt-5">
-        <div class="form-group mb-4">
-          <label for="name">Nome completo</label>
+      <span class="fw-bold require-field">
+        Campos marcados com * são requeridos
+      </span>
+
+      <form
+        class="mt-4"
+        (ngSubmit)="submit()"
+        [formGroup]="contactForm"
+        #formContactDir="ngForm"
+      >
+        <div class="form-group mb-3">
+          <label for="name">Nome completo*</label>
           <input
-            matInput
+            class="form-control"
             id="name"
             name="name"
-            class="form-control"
-            [(ngModel)]="contact.name"
+            formControlName="name"
           />
+          <div *ngIf="name.invalid && formContactDir.submitted">
+            <p>Campo obrigatório!</p>
+          </div>
         </div>
 
-        <div class="form-group mb-4">
-          <label for="email">Email</label>
+        <app-input-form label="testando" [required]="true"></app-input-form>
+
+        <!-- <div class="form-group mb-3">
+          <label for="email">Email*</label>
           <input
             matInput
             id="email"
@@ -33,8 +45,8 @@
           />
         </div>
 
-        <div class="form-group mb-4">
-          <label for="question">Assunto</label>
+        <div class="form-group mb-3">
+          <label for="question">Assunto*</label>
           <input
             matInput
             id="question"
@@ -44,8 +56,8 @@
           />
         </div>
 
-        <div class="form-group mb-5">
-          <label for="phone">Telefone</label>
+        <div class="form-group mb-4">
+          <label for="phone">Telefone*</label>
           <input
             matInput
             id="phone"
@@ -68,9 +80,9 @@
             id="note"
             [(ngModel)]="contact.note"
           ></textarea>
-        </div>
+        </div> -->
 
-        <button class="btn btn-primary" (click)="sendContact()">Enviar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
     </div>
   </div>

@@ -1,0 +1,30 @@
+<div class="form-group mb-3">
+  <label [for]="inputName">
+    {{ label }}
+    <span *ngIf="required">*</span>
+  </label>
+
+  <ng-container *ngIf="type == 'input'; else textArea">
+    <input
+      matInput
+      class="form-control"
+      [placeholder]="placeholder ? label : ''"
+      [id]="inputName"
+      [name]="inputName"
+      [formControlName]="inputName"
+    />
+  </ng-container>
+
+  <div *ngIf="invalid && submitted">
+    <p>Campo obrigatório!</p>
+  </div>
+</div>
+
+<ng-template #textArea>
+  <textarea
+    matInput
+    class="form-control heigth-of-textarea"
+    [id]="inputName"
+    [name]="inputName"
+  ></textarea>
+</ng-template>

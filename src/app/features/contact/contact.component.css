@@ -24,11 +24,30 @@
   padding: 30px 0 90px 0;
 }
 
+.contact-space .heigth-of-textarea {
+  height: 300px;
+}
+
+.contact-space label {
+  color: #494b51;
+}
+
+.contact-space label,
+.contact-space .require-field {
+  font-size: 12px;
+}
+
+.contact-space input {
+  height: 35px;
+}
+
 .contact-space button {
   padding: 15px 40px;
   text-transform: uppercase;
+  background-color: var(--base-color);
+  border-color: var(--base-color);
 }
 
-.contact-space .heigth-of-textarea {
-  height: 300px;
+.contact-space button:focus {
+  box-shadow: 0 0 0 0 #fff;
 }

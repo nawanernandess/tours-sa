@@ -5,10 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { InputFormComponent } from './components/input-form/input-form.component';
 
 @NgModule({
   imports: [
@@ -18,8 +20,14 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     FontAwesomeModule,
     MatSnackBarModule,
     MatToolbarModule,
+    ReactiveFormsModule,
   ],
-  declarations: [CardComponent, SwiperComponent, AvatarComponent],
+  declarations: [
+    CardComponent,
+    SwiperComponent,
+    AvatarComponent,
+    InputFormComponent,
+  ],
   exports: [
     HttpClientModule,
     BrowserModule,
@@ -28,6 +36,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     CardComponent,
     SwiperComponent,
     AvatarComponent,
+    InputFormComponent,
   ],
 })
 export class SharedModule {}
