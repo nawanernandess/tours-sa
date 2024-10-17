@@ -20,50 +20,77 @@
         #formContactDir="ngForm"
       >
         <div class="form-group mb-3">
-          <label for="name">Nome completo*</label>
+          <label for="name">Nome*</label>
           <input
             class="form-control"
             id="name"
             name="name"
             formControlName="name"
           />
-          <div *ngIf="name.invalid && formContactDir.submitted">
-            <p>Campo obrigatório!</p>
+
+          <div *ngIf="isSubmitted" class="validation-error">
+            <p *ngIf="contactForm.get('name')?.errors?.['required']">
+              Campo obrigatório!
+            </p>
           </div>
         </div>
 
         <div class="form-group mb-3">
           <label for="email">Email*</label>
           <input
-            matInput
+            class="form-control"
+            placeholder="seu@melhoremail.com"
             id="email"
             name="email"
-            class="form-control"
-            [(ngModel)]="contact.email"
+            formControlName="email"
           />
+
+          <div *ngIf="isSubmitted" class="validation-error">
+            <p
+              *ngIf="contactForm.get('email')?.errors?.['required'] || contactForm.get('email')?.errors?.['email']"
+            >
+              Campo obrigatório!
+            </p>
+          </div>
         </div>
 
         <div class="form-group mb-3">
           <label for="question">Assunto*</label>
           <input
-            matInput
+            class="form-control"
             id="question"
             name="question"
-            class="form-control"
-            [(ngModel)]="contact.question"
+            formControlName="question"
           />
+
+          <div *ngIf="isSubmitted" class="validation-error">
+            <p *ngIf="contactForm.get('question')?.errors?.['required']">
+              Campo obrigatório!
+            </p>
+          </div>
         </div>
 
         <div class="form-group mb-4">
           <label for="phone">Telefone*</label>
           <input
-            matInput
+            class="form-control"
+            placeholder="Telefone (com DDD)"
             id="phone"
             name="phone"
-            type="tel"
-            class="form-control"
-            [(ngModel)]="contact.phone"
+            mask="(00) 0 0000-0000"
+            type="text"
+            formControlName="phone"
           />
+
+          <div *ngIf="isSubmitted" class="validation-error">
+            <p *ngIf="contactForm.get('phone')?.errors?.['required']">
+              Campo obrigatório!
+            </p>
+
+            <p *ngIf="contactForm.get('phone')?.errors?.['minlength']">
+              Minimo 10 números
+            </p>
+          </div>
         </div>
 
         <div class="form-group mb-4">
@@ -72,12 +99,17 @@
             endereços, numero voo, trem ou embarcação.. etc.*</label
           >
           <textarea
-            matInput
             class="form-control heigth-of-textarea"
             name="note"
             id="note"
-            [(ngModel)]="contact.note"
+            formControlName="note"
           ></textarea>
+
+          <div *ngIf="isSubmitted" class="validation-error">
+            <p *ngIf="contactForm.get('note')?.errors?.['required']">
+              Campo obrigatório!
+            </p>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Enviar</button>

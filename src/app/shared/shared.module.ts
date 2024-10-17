@@ -10,7 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
-import { InputFormComponent } from './components/input-form/input-form.component';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   imports: [
@@ -21,13 +25,9 @@ import { InputFormComponent } from './components/input-form/input-form.component
     MatSnackBarModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
-  declarations: [
-    CardComponent,
-    SwiperComponent,
-    AvatarComponent,
-    InputFormComponent,
-  ],
+  declarations: [CardComponent, SwiperComponent, AvatarComponent],
   exports: [
     HttpClientModule,
     BrowserModule,
@@ -36,7 +36,7 @@ import { InputFormComponent } from './components/input-form/input-form.component
     CardComponent,
     SwiperComponent,
     AvatarComponent,
-    InputFormComponent,
+    NgxMaskModule,
   ],
 })
 export class SharedModule {}

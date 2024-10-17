@@ -9,33 +9,59 @@ import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  contact: Contact;
-  contactForm: FormGroup = new FormGroup({
-    id: new FormControl('', [Validators.required]),
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
-    question: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required]),
-    note: new FormControl('', [Validators.required]),
-  });
-
-  constructor(private contactService: ContactService) {}
-
-  ngOnInit() {}
-
   get name() {
     return this.contactForm.get('name');
   }
 
-  submit() {
-    console.log('enviar formulario! ');
-    this.contact = this.contactForm.value;
-    console.log('this.contact :>> ', this.contact);
+  get email() {
+    return this.contactForm.get('email');
   }
 
-  sendContact() {
-    this.contactService.send(this.contact).subscribe(() => {
-      this.contactService.showMessage('Cadastro realizado com sucesso!');
+  get question() {
+    return this.contactForm.get('question');
+  }
+
+  get phone() {
+    return this.contactForm.get('phone');
+  }
+
+  get note() {
+    return this.contactForm.get('note');
+  }
+
+  contactForm: FormGroup;
+  isSubmitted: boolean;
+
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit() {
+    this.contactForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      question: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+      ]),
+      note: new FormControl('', [Validators.required]),
     });
+  }
+
+  submit() {
+    this.isSubmitted = true;
+    if (this.contactForm.valid) {
+      const newContact: Contact = this.contactForm.value;
+      this.contactService.send(newContact).subscribe({
+        next: () => {
+          this.contactService.showMessage(
+            'Seus dados para contato foram enviados com sucesso! Logo entraresmos em contato.'
+          );
+        },
+        complete: () => {
+          this.contactForm.reset();
+          this.isSubmitted = false;
+        },
+      });
+    }
   }
 }
