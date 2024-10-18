@@ -7,10 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 import { register } from 'swiper/element/bundle';
+import { ModalComponent } from './contact/modal/modal.component';
 register();
 
 @NgModule({
-  declarations: [ContentNavigationComponent, HomeComponent, ContactComponent],
+  declarations: [ContentNavigationComponent, HomeComponent, ContactComponent, ModalComponent],
   imports: [AppRoutingModule, FormsModule, ReactiveFormsModule, SharedModule],
   exports: [ContentNavigationComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

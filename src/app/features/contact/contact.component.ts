@@ -2,6 +2,9 @@ import { ContactService } from '../../shared/services/contact.service';
 import { Contact } from '../../core/models/contact.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'app-contact',
@@ -31,8 +34,12 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   isSubmitted: boolean;
+  modal: any;
 
-  constructor(private contactService: ContactService) {}
+  constructor(
+    private contactService: ContactService,
+    private dialogRef: MatDialog
+  ) {}
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -56,12 +63,20 @@ export class ContactComponent implements OnInit {
           this.contactService.showMessage(
             'Seus dados para contato foram enviados com sucesso! Logo entraresmos em contato.'
           );
+          this.modal = this.dialogInformation();
         },
         complete: () => {
           this.contactForm.reset();
           this.isSubmitted = false;
+          setTimeout(() => {
+            this.modal.close();
+          }, 3000);
         },
       });
     }
+  }
+
+  dialogInformation() {
+    return this.dialogRef.open(ModalComponent);
   }
 }

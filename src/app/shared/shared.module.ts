@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 const maskConfig: Partial<IConfig> = {
@@ -24,19 +26,26 @@ const maskConfig: Partial<IConfig> = {
     FontAwesomeModule,
     MatSnackBarModule,
     MatToolbarModule,
+    MatDialogModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(maskConfig),
   ],
-  declarations: [CardComponent, SwiperComponent, AvatarComponent],
+  declarations: [
+    CardComponent,
+    SwiperComponent,
+    AvatarComponent,
+    DialogComponent,
+  ],
   exports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    NgxMaskModule,
     CardComponent,
     SwiperComponent,
     AvatarComponent,
-    NgxMaskModule,
+    DialogComponent,
   ],
 })
 export class SharedModule {}
