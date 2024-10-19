@@ -13,6 +13,5 @@ export class NavbarComponent implements OnInit {
 
   navigateToRegisterContact() {
     this._Router.navigateByUrl('contato');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

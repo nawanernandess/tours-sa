@@ -14,6 +14,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { AppRoutingModule } from '../app-routing.module';
 const maskConfig: Partial<IConfig> = {
   validation: false,
 };
@@ -28,6 +29,7 @@ const maskConfig: Partial<IConfig> = {
     MatToolbarModule,
     MatDialogModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     NgxMaskModule.forRoot(maskConfig),
   ],
   declarations: [
@@ -42,6 +44,7 @@ const maskConfig: Partial<IConfig> = {
     BrowserAnimationsModule,
     FontAwesomeModule,
     NgxMaskModule,
+    AppRoutingModule,
     CardComponent,
     SwiperComponent,
     AvatarComponent,
