@@ -7,14 +7,6 @@
       "phone": "(21) 97250-3577",
       "note": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "id": 1
-    },
-    {
-      "name": "Teste",
-      "email": "teste@gmail.com",
-      "question": "Teste",
-      "phone": "21999999999",
-      "note": "Testando o envio das informações para contato.",
-      "id": 2
     }
   ]
 }

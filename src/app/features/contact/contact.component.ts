@@ -60,9 +60,6 @@ export class ContactComponent implements OnInit {
       const newContact: Contact = this.contactForm.value;
       this.contactService.send(newContact).subscribe({
         next: () => {
-          this.contactService.showMessage(
-            'Seus dados para contato foram enviados com sucesso! Logo entraresmos em contato.'
-          );
           this.modal = this.dialogInformation();
         },
         complete: () => {
