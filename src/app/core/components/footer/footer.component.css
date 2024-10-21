@@ -1,0 +1,75 @@
+.footer-title,
+.contact ul li a,
+.contact .links a {
+  color: #696969;
+}
+
+.contact {
+  background-color: #ededed;
+}
+
+.contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+.contact ul li {
+  list-style-type: none;
+}
+
+.contact ul li a {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.contact .links {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  gap: 28px;
+}
+
+.contact .logo .logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.contact .logo .logo-img .logo-img-size {
+  width: 300px;
+  height: 300px;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  padding: 4rem 0;
+  position: inherit;
+  background: var(--base-color);
+  color: var(--text-color-light);
+}
+
+footer .logo {
+  font-size: 2.25rem;
+}
+
+.sa {
+  color: #ff8000;
+}
+
+@media (min-width: 767px) {
+  .footer-title {
+    font-size: 16px !important;
+  }
+
+  .contact .text {
+    max-width: 25rem;
+  }
+
+  .align-text-start {
+    text-align: start;
+  }
+}

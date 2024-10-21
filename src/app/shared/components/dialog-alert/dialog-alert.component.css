@@ -1,0 +1,39 @@
+.modal-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 240px;
+  width: 300px;
+  gap: 30px;
+}
+
+.modal-info fa-icon {
+  font-size: 50px;
+}
+
+.modal-info .success {
+  color: #1fa67a;
+}
+
+.modal-info .error {
+  color: #dc3545;
+}
+
+.modal-info .header-description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-info .header-description h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.modal-info .header-description .description {
+  font: 12px;
+  color: #696969;
+  text-align: center;
+}

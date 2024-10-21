@@ -1,0 +1,37 @@
+.blockquote {
+  margin: 0;
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+
+.blockquote .quote-icon {
+  font-size: 90px;
+  color: #dfdfdf;
+}
+
+.blockquote p {
+  text-align: start;
+  margin: 1rem 0 2rem 0;
+}
+
+.blockquote .cite {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.blockquote .cite .customer {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+}
+
+.blockquote .cite .customer .customer-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.blockquote .cite .customer .customer-role {
+  font-size: 12px;
+}
