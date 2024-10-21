@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "database": "json-server --watch database.json --port 3000"
+    "database": "json-server --watch database/database.json --port 3000"
   },
   "private": true,
   "dependencies": {

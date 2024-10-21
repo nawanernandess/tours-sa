@@ -10,7 +10,14 @@
 
 .modal-info fa-icon {
   font-size: 50px;
+}
+
+.modal-info .success {
   color: #1fa67a;
+}
+
+.modal-info .error {
+  color: #dc3545;
 }
 
 .modal-info .header-description {

@@ -11,7 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogAlertComponent } from './components/dialog-alert/dialog-alert.component';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 const maskConfig: Partial<IConfig> = {
@@ -34,7 +34,7 @@ const maskConfig: Partial<IConfig> = {
     CardComponent,
     SwiperComponent,
     AvatarComponent,
-    DialogComponent,
+    DialogAlertComponent,
   ],
   exports: [
     HttpClientModule,
@@ -47,7 +47,7 @@ const maskConfig: Partial<IConfig> = {
     CardComponent,
     SwiperComponent,
     AvatarComponent,
-    DialogComponent,
+    DialogAlertComponent,
   ],
 })
 export class SharedModule {}

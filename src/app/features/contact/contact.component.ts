@@ -1,10 +1,11 @@
 import { ContactService } from '../../shared/services/contact.service';
 import { Contact } from '../../core/models/contact.model';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from 'src/app/shared/components/dialog/dialog.component';
-import { ModalComponent } from './modal/modal.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  DialogAlertService,
+  DialogType,
+} from 'src/app/shared/services/dialog-alert.service';
 
 @Component({
   selector: 'app-contact',
@@ -34,11 +35,10 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   isSubmitted: boolean;
-  modal: any;
 
   constructor(
     private contactService: ContactService,
-    private dialogRef: MatDialog
+    private dialogAlertService: DialogAlertService
   ) {}
 
   ngOnInit() {
@@ -60,20 +60,23 @@ export class ContactComponent implements OnInit {
       const newContact: Contact = this.contactForm.value;
       this.contactService.send(newContact).subscribe({
         next: () => {
-          this.modal = this.dialogInformation();
+          this.dialogAlertService.dialogOpen(
+            DialogType.success,
+            'Seus dados foram enviados com sucesso, nossa equipe entrará em contato em breve!'
+          );
+        },
+        error: () => {
+          this.dialogAlertService.dialogOpen(
+            DialogType.error,
+            'Não foi possível enviar seus dados, tente novamente!'
+          );
         },
         complete: () => {
           this.contactForm.reset();
           this.isSubmitted = false;
-          setTimeout(() => {
-            this.modal.close();
-          }, 3000);
+          this.dialogAlertService.close();
         },
       });
     }
-  }
-
-  dialogInformation() {
-    return this.dialogRef.open(ModalComponent);
   }
 }
