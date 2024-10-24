@@ -8,6 +8,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 
+import { ScrollToPipe } from './pipes/scroll-to.pipe';
+
 import { CardComponent } from './components/card/card.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
@@ -35,6 +37,7 @@ const maskConfig: Partial<IConfig> = {
     SwiperComponent,
     AvatarComponent,
     DialogAlertComponent,
+    ScrollToPipe,
   ],
   exports: [
     HttpClientModule,

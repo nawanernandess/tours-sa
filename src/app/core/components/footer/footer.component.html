@@ -3,7 +3,7 @@
     <div class="content-in-center align-text-start">
       <div class="content-div-alignment">
         <div class="logo">
-          <a href="#home">
+          <a href="">
             <app-avatar
               avatar="../../../../assets/img/tours-logo-1000x1300.png"
             ></app-avatar>
@@ -14,16 +14,30 @@
           <h2 class="title footer-title">Navegue</h2>
           <ul>
             <li>
-              <a class="nav-title footer-navigation" href="#home">Início</a>
+              <a
+                class="nav-title footer-navigation"
+                (click)="scrollTo($event, 'inicio')"
+                >Início</a
+              >
             </li>
             <li>
-              <a class="nav-title footer-navigation" href="#start">Atrações</a>
+              <a
+                class="nav-title footer-navigation"
+                (click)="scrollTo($event, 'atracoes')"
+                >Atrações</a
+              >
             </li>
             <li>
-              <a class="nav-title footer-navigation" href="#about">Sobre</a>
+              <a
+                class="nav-title footer-navigation"
+                (click)="scrollTo($event, 'sobre')"
+                >Sobre</a
+              >
             </li>
             <li>
-              <a class="nav-title footer-navigation" href="#review"
+              <a
+                class="nav-title footer-navigation"
+                (click)="scrollTo($event, 'depoimentos')"
                 >Depoimentos</a
               >
             </li>
@@ -36,11 +50,11 @@
         </div>
 
         <div class="links">
-          <a href="####" target="_blank">
+          <a href="https://www.linkedin.com/in/nawanernandes/" target="_blank">
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           </a>
 
-          <a href="####" target="_blank">
+          <a href="https://github.com/nawanernandess" target="_blank">
             <i class="fa fa-github"></i>
           </a>
 
@@ -57,7 +71,7 @@
   <div class="content-alignment">
     <div class="content-in-center">
       <p>Copyright &copy; 2024 - Todos os direitos reservados</p>
-      <a href="#inicio" class="logo logo-alt">
+      <a href="" class="logo logo-alt">
         <span>TOURS-</span>
         <span class="sa">SA</span>
         <span>.</span>

@@ -6,14 +6,26 @@
 
     <div class="menu">
       <ul>
-        <li><a class="nav-title" href="#home">Início</a></li>
-        <li><a class="nav-title" href="#start">Atrações</a></li>
-        <li><a class="nav-title" href="#about">Sobre</a></li>
-        <li><a class="nav-title" href="#review">Depoimentos</a></li>
         <li>
-          <a class="nav-title" (click)="navigateToRegisterContact()"
-            >Fale Conosco</a
-          >
+          <a class="nav-title" (click)="scrollTo($event, 'inicio')">Início</a>
+        </li>
+        <li>
+          <a class="nav-title" (click)="scrollTo($event, 'atracoes')">
+            Atrações
+          </a>
+        </li>
+        <li>
+          <a class="nav-title" (click)="scrollTo($event, 'sobre')">Sobre</a>
+        </li>
+        <li>
+          <a class="nav-title" (click)="scrollTo($event, 'depoimentos')">
+            Depoimentos
+          </a>
+        </li>
+        <li>
+          <a class="nav-title" (click)="navigateToRegisterContact()">
+            Fale Conosco
+          </a>
         </li>
       </ul>
 
