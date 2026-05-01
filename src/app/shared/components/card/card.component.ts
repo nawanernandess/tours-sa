@@ -5,8 +5,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-card',
-  template: `
+    selector: 'app-card',
+    template: `
     <div class="card">
       <fa-icon
         *ngIf="icon"
@@ -30,7 +30,8 @@ import {
       </div>
     </div>
   `,
-  styleUrls: ['./card.component.css'],
+    styleUrls: ['./card.component.css'],
+    standalone: false
 })
 export class CardComponent implements OnInit {
   @Input() icon: IconDefinition = faAddressBook;

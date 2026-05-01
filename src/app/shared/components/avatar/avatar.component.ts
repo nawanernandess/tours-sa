@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-avatar',
-  template: `
+    selector: 'app-avatar',
+    template: `
     <div>
       <img
         [ngClass]="{
@@ -17,7 +17,8 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
       />
     </div>
   `,
-  styleUrls: ['./avatar.component.css'],
+    styleUrls: ['./avatar.component.css'],
+    standalone: false
 })
 export class AvatarComponent implements OnInit {
   @Input() avatar: string | IconDefinition;

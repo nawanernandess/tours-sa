@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Pipe({
-  name: 'scrollTo',
+    name: 'scrollTo',
+    standalone: false
 })
 export class ScrollToPipe implements PipeTransform {
   constructor(private _Router: Router) {}

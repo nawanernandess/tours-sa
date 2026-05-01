@@ -3,8 +3,8 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { DialogAlertService } from '../../services/dialog-alert.service';
 
 @Component({
-  selector: 'app-dialog',
-  template: `
+    selector: 'app-dialog',
+    template: `
     <div class="modal-info">
       <fa-icon
         [ngClass]="{
@@ -19,7 +19,8 @@ import { DialogAlertService } from '../../services/dialog-alert.service';
       </div>
     </div>
   `,
-  styleUrls: ['./dialog-alert.component.css'],
+    styleUrls: ['./dialog-alert.component.css'],
+    standalone: false
 })
 export class DialogAlertComponent implements OnInit {
   icon?: IconDefinition;
