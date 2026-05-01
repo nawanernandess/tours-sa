@@ -1,7 +1,7 @@
 import { ContactService } from '../../shared/services/contact.service';
 import { Contact } from '../../core/models/contact.model';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import {
   DialogAlertService,
   DialogType,
@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
     return this.contactForm.get('note');
   }
 
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
   isSubmitted: boolean;
 
   constructor(
@@ -42,15 +42,15 @@ export class ContactComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.contactForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      question: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [
+    this.contactForm = new UntypedFormGroup({
+      name: new UntypedFormControl('', [Validators.required]),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      question: new UntypedFormControl('', [Validators.required]),
+      phone: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(10),
       ]),
-      note: new FormControl('', [Validators.required]),
+      note: new UntypedFormControl('', [Validators.required]),
     });
   }
 
