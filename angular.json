@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Tours-SA:build:production"
+              "buildTarget": "Tours-SA:build:production"
             },
             "development": {
-              "browserTarget": "Tours-SA:build:development"
+              "buildTarget": "Tours-SA:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Tours-SA:build"
+            "buildTarget": "Tours-SA:build"
           }
         },
         "test": {
