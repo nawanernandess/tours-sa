@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,37 +20,30 @@ const maskConfig: Partial<IConfig> = {
   validation: false,
 };
 
-@NgModule({
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    MatToolbarModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    NgxMaskModule.forRoot(maskConfig),
-  ],
-  declarations: [
-    CardComponent,
-    SwiperComponent,
-    AvatarComponent,
-    DialogAlertComponent,
-    ScrollToPipe,
-  ],
-  exports: [
-    HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    NgxMaskModule,
-    AppRoutingModule,
-
-    CardComponent,
-    SwiperComponent,
-    AvatarComponent,
-    DialogAlertComponent,
-  ],
-})
+@NgModule({ declarations: [
+        CardComponent,
+        SwiperComponent,
+        AvatarComponent,
+        DialogAlertComponent,
+        ScrollToPipe,
+    ],
+    exports: [
+        HttpClientModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+        NgxMaskModule,
+        AppRoutingModule,
+        CardComponent,
+        SwiperComponent,
+        AvatarComponent,
+        DialogAlertComponent,
+    ], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+        MatToolbarModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        NgxMaskModule.forRoot(maskConfig)], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class SharedModule {}
