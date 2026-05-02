@@ -1,31 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-    selector: 'app-avatar',
-    template: `
+  selector: 'app-avatar',
+  standalone: true,
+  imports: [NgClass],
+  template: `
     <div>
       <img
         [ngClass]="{
-          large: size == 'large',
-          medium: size == 'medium',
-          small: size == 'small',
-          profile: size == 'profile'
+          large: size() === 'large',
+          medium: size() === 'medium',
+          small: size() === 'small',
+          profile: size() === 'profile'
         }"
-        [src]="avatar"
+        [src]="avatar()"
         alt="avatar"
       />
     </div>
   `,
-    styleUrls: ['./avatar.component.css'],
-    standalone: false
+  styleUrl: './avatar.component.css',
 })
-export class AvatarComponent implements OnInit {
-  @Input() avatar: string | IconDefinition;
-
-  @Input() size: 'large' | 'medium' | 'small' | 'profile' = 'medium';
-
-  constructor() {}
-
-  ngOnInit(): void {}
+export class AvatarComponent {
+  readonly avatar = input<string | IconDefinition>('');
+  readonly size = input<'large' | 'medium' | 'small' | 'profile'>('medium');
 }

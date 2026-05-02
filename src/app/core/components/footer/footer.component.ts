@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { ScrollToPipe } from 'src/app/shared/pipes/scroll-to.pipe';
+import { ScrollToService } from '../../../shared/services/scroll-to.service';
+import { AvatarComponent } from '../../../shared/components/avatar/avatar.component';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.css'],
-    providers: [ScrollToPipe],
-    standalone: false
+  selector: 'app-footer',
+  standalone: true,
+  imports: [FontAwesomeModule, AvatarComponent],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.css',
 })
-export class FooterComponent implements OnInit {
-  envelope = faEnvelope;
+export class FooterComponent {
+  private readonly router = inject(Router);
+  private readonly scrollToService = inject(ScrollToService);
 
-  constructor(private _Router: Router, private _scrollToPipe: ScrollToPipe) {}
-
-  ngOnInit() {}
+  readonly envelope = faEnvelope;
 
   scrollTo(event: Event, sectionId: string): void {
-    return this._scrollToPipe.transform(event, sectionId);
+    this.scrollToService.scrollTo(event, sectionId);
   }
 
-  navigateToRegisterContact() {
-    this._Router.navigateByUrl('contato');
+  navigateToRegisterContact(): void {
+    this.router.navigateByUrl('contato');
   }
 }

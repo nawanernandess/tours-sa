@@ -1,24 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ScrollToPipe } from 'src/app/shared/pipes/scroll-to.pipe';
+import { ScrollToService } from '../../../shared/services/scroll-to.service';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css'],
-    providers: [ScrollToPipe],
-    standalone: false
+  selector: 'app-navbar',
+  standalone: true,
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnInit {
-  constructor(private _Router: Router, private _scrollToPipe: ScrollToPipe) {}
-
-  ngOnInit() {}
+export class NavbarComponent {
+  private readonly router = inject(Router);
+  private readonly scrollToService = inject(ScrollToService);
 
   scrollTo(event: Event, sectionId: string): void {
-    return this._scrollToPipe.transform(event, sectionId);
+    this.scrollToService.scrollTo(event, sectionId);
   }
 
-  navigateToRegisterContact() {
-    this._Router.navigateByUrl('contato');
+  navigateToRegisterContact(): void {
+    this.router.navigateByUrl('contato');
   }
 }

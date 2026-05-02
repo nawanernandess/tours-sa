@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAlertComponent } from '../components/dialog-alert/dialog-alert.component';
 
@@ -17,35 +17,34 @@ export enum DialogType {
   providedIn: 'root',
 })
 export class DialogAlertService {
-  dialog: any;
-  icon: IconDefinition | undefined = undefined;
-  title: string = '';
-  description: string = '';
-  typeStyle: string = '';
+  private readonly dialogRef = inject(MatDialog);
 
-  constructor(private dialogRef: MatDialog) {}
+  readonly icon = signal<IconDefinition | undefined>(undefined);
+  readonly title = signal('');
+  readonly description = signal('');
+  readonly typeStyle = signal('');
 
-  dialogOpen(type: DialogType, mensage: string) {
-    this.dialog = this.dialogRef.open(DialogAlertComponent);
-    this.description = mensage;
+  dialogOpen(type: DialogType, message: string): void {
+    this.description.set(message);
 
     switch (type) {
       case DialogType.success:
-        this.typeStyle = type;
-        this.icon = faCheckCircle;
-        this.title = 'Sucesso';
+        this.typeStyle.set(type);
+        this.icon.set(faCheckCircle);
+        this.title.set('Sucesso');
         break;
       case DialogType.error:
-        this.typeStyle = type;
-        this.icon = faTimesCircle;
-        this.title = 'Erro';
+        this.typeStyle.set(type);
+        this.icon.set(faTimesCircle);
+        this.title.set('Erro');
         break;
     }
+
+    const dialog = this.dialogRef.open(DialogAlertComponent);
+    setTimeout(() => dialog.close(), 3000);
   }
 
-  close() {
-    setTimeout(() => {
-      this.dialog.close();
-    }, 3000);
+  close(): void {
+    this.dialogRef.closeAll();
   }
 }

@@ -1,64 +1,38 @@
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgxMaskDirective } from 'ngx-mask';
 import { ContactService } from '../../shared/services/contact.service';
 import { Contact } from '../../core/models/contact.model';
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import {
   DialogAlertService,
   DialogType,
-} from 'src/app/shared/services/dialog-alert.service';
+} from '../../shared/services/dialog-alert.service';
 
 @Component({
-    selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.css'],
-    standalone: false
+  selector: 'app-contact',
+  standalone: true,
+  imports: [ReactiveFormsModule, NgxMaskDirective],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css',
 })
-export class ContactComponent implements OnInit {
-  get name() {
-    return this.contactForm.get('name');
-  }
+export class ContactComponent {
+  private readonly contactService = inject(ContactService);
+  private readonly dialogAlertService = inject(DialogAlertService);
 
-  get email() {
-    return this.contactForm.get('email');
-  }
+  isSubmitted = false;
 
-  get question() {
-    return this.contactForm.get('question');
-  }
+  readonly contactForm = new FormGroup({
+    name: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+    email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    question: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+    phone: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(10)] }),
+    note: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+  });
 
-  get phone() {
-    return this.contactForm.get('phone');
-  }
-
-  get note() {
-    return this.contactForm.get('note');
-  }
-
-  contactForm: UntypedFormGroup;
-  isSubmitted: boolean;
-
-  constructor(
-    private contactService: ContactService,
-    private dialogAlertService: DialogAlertService
-  ) {}
-
-  ngOnInit() {
-    this.contactForm = new UntypedFormGroup({
-      name: new UntypedFormControl('', [Validators.required]),
-      email: new UntypedFormControl('', [Validators.required, Validators.email]),
-      question: new UntypedFormControl('', [Validators.required]),
-      phone: new UntypedFormControl('', [
-        Validators.required,
-        Validators.minLength(10),
-      ]),
-      note: new UntypedFormControl('', [Validators.required]),
-    });
-  }
-
-  submit() {
+  submit(): void {
     this.isSubmitted = true;
     if (this.contactForm.valid) {
-      const newContact: Contact = this.contactForm.value;
+      const newContact: Contact = this.contactForm.getRawValue();
       this.contactService.send(newContact).subscribe({
         next: () => {
           this.dialogAlertService.dialogOpen(
@@ -75,7 +49,6 @@ export class ContactComponent implements OnInit {
         complete: () => {
           this.contactForm.reset();
           this.isSubmitted = false;
-          this.dialogAlertService.close();
         },
       });
     }

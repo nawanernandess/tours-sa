@@ -1,13 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Pipe({
-    name: 'scrollTo',
-    standalone: false
+@Injectable({
+  providedIn: 'root',
 })
-export class ScrollToPipe implements PipeTransform {
-  constructor(private _Router: Router) {}
-  transform(event: Event, sectionId: string) {
+export class ScrollToService {
+  private readonly router = inject(Router);
+
+  scrollTo(event: Event, sectionId: string): void {
     event.preventDefault();
     const element = document.getElementById(sectionId);
 
@@ -18,36 +18,32 @@ export class ScrollToPipe implements PipeTransform {
       const offsetPosition = elementPosition - offset;
 
       this.smoothScrollTo(0, offsetPosition);
-
       window.history.pushState(null, '', `#${sectionId}`);
-      return;
     } else {
-      this._Router.navigateByUrl('');
+      this.router.navigateByUrl('');
     }
   }
 
-  smoothScrollTo(endX: number, endY: number, duration?: number) {
-    const startX = window.scrollX || window.pageXOffset;
-    const startY = window.scrollY || window.pageYOffset;
+  private smoothScrollTo(endX: number, endY: number, duration = 400): void {
+    const startX = window.scrollX;
+    const startY = window.scrollY;
     const distanceX = endX - startX;
     const distanceY = endY - startY;
-    const startTime = new Date().getTime();
-
-    duration = typeof duration !== 'undefined' ? duration : 400;
+    const startTime = Date.now();
 
     const easeInOutQuart = (
       time: number,
       from: number,
       distance: number,
-      duration: number
-    ) => {
-      if ((time /= duration / 2) < 1)
-        return (distance / 2) * time * time * time * time + from;
-      return (-distance / 2) * ((time -= 2) * time * time * time - 2) + from;
+      dur: number
+    ): number => {
+      const t = time / (dur / 2);
+      if (t < 1) return (distance / 2) * t * t * t * t + from;
+      return (-distance / 2) * ((t - 2) * (t - 2) * (t - 2) * (t - 2) - 2) + from;
     };
 
     const timer = setInterval(() => {
-      const time = new Date().getTime() - startTime;
+      const time = Date.now() - startTime;
       const newX = easeInOutQuart(time, startX, distanceX, duration);
       const newY = easeInOutQuart(time, startY, distanceY, duration);
       if (time >= duration) {
