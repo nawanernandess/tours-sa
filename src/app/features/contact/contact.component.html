@@ -18,7 +18,7 @@
         (ngSubmit)="submit()"
         [formGroup]="contactForm"
         #formContactDir="ngForm"
-      >
+        >
         <div class="form-group mb-3">
           <label for="name">Nome*</label>
           <input
@@ -26,94 +26,114 @@
             id="name"
             name="name"
             formControlName="name"
-          />
+            />
 
-          <div *ngIf="isSubmitted" class="validation-error">
-            <p *ngIf="contactForm.get('name')?.errors?.['required']">
-              Campo obrigatório!
-            </p>
+            @if (isSubmitted) {
+              <div class="validation-error">
+                @if (contactForm.get('name')?.errors?.['required']) {
+                  <p>
+                    Campo obrigatório!
+                  </p>
+                }
+              </div>
+            }
           </div>
-        </div>
 
-        <div class="form-group mb-3">
-          <label for="email">Email*</label>
-          <input
-            class="form-control"
-            placeholder="seu@melhoremail.com"
-            id="email"
-            name="email"
-            formControlName="email"
-          />
+          <div class="form-group mb-3">
+            <label for="email">Email*</label>
+            <input
+              class="form-control"
+              placeholder="seu@melhoremail.com"
+              id="email"
+              name="email"
+              formControlName="email"
+              />
 
-          <div *ngIf="isSubmitted" class="validation-error">
-            <p
-              *ngIf="contactForm.get('email')?.errors?.['required'] || contactForm.get('email')?.errors?.['email']"
-            >
-              Campo obrigatório!
-            </p>
-          </div>
-        </div>
+              @if (isSubmitted) {
+                <div class="validation-error">
+                  @if (contactForm.get('email')?.errors?.['required'] || contactForm.get('email')?.errors?.['email']) {
+                    <p
+                      >
+                      Campo obrigatório!
+                    </p>
+                  }
+                </div>
+              }
+            </div>
 
-        <div class="form-group mb-3">
-          <label for="question">Assunto*</label>
-          <input
-            class="form-control"
-            id="question"
-            name="question"
-            formControlName="question"
-          />
+            <div class="form-group mb-3">
+              <label for="question">Assunto*</label>
+              <input
+                class="form-control"
+                id="question"
+                name="question"
+                formControlName="question"
+                />
 
-          <div *ngIf="isSubmitted" class="validation-error">
-            <p *ngIf="contactForm.get('question')?.errors?.['required']">
-              Campo obrigatório!
-            </p>
-          </div>
-        </div>
+                @if (isSubmitted) {
+                  <div class="validation-error">
+                    @if (contactForm.get('question')?.errors?.['required']) {
+                      <p>
+                        Campo obrigatório!
+                      </p>
+                    }
+                  </div>
+                }
+              </div>
 
-        <div class="form-group mb-4">
-          <label for="phone">Telefone*</label>
-          <input
-            class="form-control"
-            placeholder="Telefone (com DDD)"
-            id="phone"
-            name="phone"
-            mask="(00) 0 0000-0000"
-            type="text"
-            formControlName="phone"
-          />
+              <div class="form-group mb-4">
+                <label for="phone">Telefone*</label>
+                <input
+                  class="form-control"
+                  placeholder="Telefone (com DDD)"
+                  id="phone"
+                  name="phone"
+                  mask="(00) 0 0000-0000"
+                  type="text"
+                  formControlName="phone"
+                  />
 
-          <div *ngIf="isSubmitted" class="validation-error">
-            <p *ngIf="contactForm.get('phone')?.errors?.['required']">
-              Campo obrigatório!
-            </p>
+                  @if (isSubmitted) {
+                    <div class="validation-error">
+                      @if (contactForm.get('phone')?.errors?.['required']) {
+                        <p>
+                          Campo obrigatório!
+                        </p>
+                      }
+                      @if (contactForm.get('phone')?.errors?.['minlength']) {
+                        <p>
+                          Minimo 10 números
+                        </p>
+                      }
+                    </div>
+                  }
+                </div>
 
-            <p *ngIf="contactForm.get('phone')?.errors?.['minlength']">
-              Minimo 10 números
-            </p>
-          </div>
-        </div>
+                <div class="form-group mb-4">
+                  <label for="note"
+                    >Informações úteis para processarmos seu orçamento, como: datas,
+                    endereços, numero voo, trem ou embarcação.. etc.*</label
+                    >
+                    <textarea
+                      class="form-control heigth-of-textarea"
+                      name="note"
+                      id="note"
+                      formControlName="note"
+                    ></textarea>
 
-        <div class="form-group mb-4">
-          <label for="note"
-            >Informações úteis para processarmos seu orçamento, como: datas,
-            endereços, numero voo, trem ou embarcação.. etc.*</label
-          >
-          <textarea
-            class="form-control heigth-of-textarea"
-            name="note"
-            id="note"
-            formControlName="note"
-          ></textarea>
+                    @if (isSubmitted) {
+                      <div class="validation-error">
+                        @if (contactForm.get('note')?.errors?.['required']) {
+                          <p>
+                            Campo obrigatório!
+                          </p>
+                        }
+                      </div>
+                    }
+                  </div>
 
-          <div *ngIf="isSubmitted" class="validation-error">
-            <p *ngIf="contactForm.get('note')?.errors?.['required']">
-              Campo obrigatório!
-            </p>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-    </div>
-  </div>
-</section>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </section>

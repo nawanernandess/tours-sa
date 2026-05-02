@@ -8,28 +8,31 @@ import {
     selector: 'app-card',
     template: `
     <div class="card">
-      <fa-icon
-        *ngIf="icon"
-        class="size-icon-in-content"
-        [icon]="icon"
-      ></fa-icon>
-
+      @if (icon) {
+        <fa-icon
+          class="size-icon-in-content"
+          [icon]="icon"
+        ></fa-icon>
+      }
+    
       <div class="app-card-body">
         <h3 class="title m-0">{{ title }}</h3>
-
+    
         <p class="m-0 tam">{{ description }}</p>
-
-        <div *ngIf="buttonTitle" class="content-alignment">
-          <a
-            class="btn-card content-alignment"
-            (click)="actionEmitter.emit(true)"
-            style="cursor: pointer"
-            >{{ buttonTitle }}</a
-          >
+    
+        @if (buttonTitle) {
+          <div class="content-alignment">
+            <a
+              class="btn-card content-alignment"
+              (click)="actionEmitter.emit(true)"
+              style="cursor: pointer"
+              >{{ buttonTitle }}</a
+              >
+            </div>
+          }
         </div>
       </div>
-    </div>
-  `,
+    `,
     styleUrls: ['./card.component.css'],
     standalone: false
 })
