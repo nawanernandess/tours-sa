@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DialogAlertService } from '../../services/dialog-alert.service';
 
 @Component({
   selector: 'app-dialog',
-  standalone: true,
-  imports: [NgClass, FontAwesomeModule],
+  imports: [NgClass, MatDialogModule, FontAwesomeModule],
   template: `
-    <div class="modal-info">
+    <div mat-dialog-content class="modal-info">
       @if (dialogService.icon()) {
         <fa-icon
           [ngClass]="{

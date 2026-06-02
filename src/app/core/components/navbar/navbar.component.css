@@ -2,7 +2,7 @@
   color: #ff8000;
 }
 
-#header {
+mat-toolbar {
   position: fixed;
   width: 100%;
   height: var(--header-height);
@@ -11,6 +11,7 @@
   z-index: 100;
   background-color: var(--body-color);
   border-bottom: 1px solid #e4e4e4;
+  padding: 0 1rem;
 }
 
 nav {
@@ -18,6 +19,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav .menu {
@@ -56,14 +60,6 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
   font-weight: bold;
-}
-
-nav .menu .show-button button {
-  padding: 4px 8px;
-  background-color: var(--base-color);
-  border: none;
-  border-radius: 5px;
-  color: #fff;
 }
 
 @media (min-width: 767px) {

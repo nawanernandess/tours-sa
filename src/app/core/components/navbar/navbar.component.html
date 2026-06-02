@@ -1,4 +1,4 @@
-<header class="content-alignment" id="header">
+<mat-toolbar id="header">
   <nav class="content-in-center">
     <a class="logo" href="">
       <span>TOURS-</span> <span class="sa">SA</span> <span>.</span>
@@ -30,8 +30,10 @@
       </ul>
 
       <div class="show-button">
-        <button (click)="navigateToRegisterContact()">solicitar cotação</button>
+        <button mat-flat-button color="primary" (click)="navigateToRegisterContact()">
+          solicitar cotação
+        </button>
       </div>
     </div>
   </nav>
-</header>
+</mat-toolbar>

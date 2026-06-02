@@ -5,7 +5,6 @@ import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'app-swiper',
-  standalone: true,
   imports: [FontAwesomeModule, AvatarComponent],
   template: `
     <div class="blockquote">

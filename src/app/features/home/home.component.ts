@@ -1,6 +1,7 @@
-import { Component, inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, inject, CUSTOM_ELEMENTS_SCHEMA, afterNextRender } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatButtonModule } from '@angular/material/button';
 import {
   faCar,
   faMap,
@@ -8,11 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { SwiperComponent } from '../../shared/components/swiper/swiper.component';
+import { register } from 'swiper/element/bundle';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [FontAwesomeModule, CardComponent, SwiperComponent],
+  imports: [FontAwesomeModule, MatButtonModule, CardComponent, SwiperComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -22,7 +23,7 @@ export class HomeComponent {
 
   readonly car = faCar;
   readonly map = faMap;
-  readonly planeDerpature = faPlaneDeparture;
+  readonly planeDeparture = faPlaneDeparture;
 
   readonly descriptionTransfer =
     'Reserve seu transfer com preços acessíveis, conforto e segurança. Serviço rápido, confiável e com atendimento personalizado para garantir sua melhor experiência de viagem.';
@@ -32,6 +33,10 @@ export class HomeComponent {
 
   readonly lorem =
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo asperiores reiciendis neque explicabo suscipit tempore! Voluptates minima nostrum ex perferendis necessitatibus veniam, enim deserunt facere placeat, illum quae, quam eveniet.';
+
+  constructor() {
+    afterNextRender(() => register());
+  }
 
   navigateToRegisterContact(): void {
     this.router.navigateByUrl('contato');

@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { NgxMaskDirective } from 'ngx-mask';
 import { ContactService } from '../../shared/services/contact.service';
 import { Contact } from '../../core/models/contact.model';
@@ -10,16 +13,19 @@ import {
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
-  imports: [ReactiveFormsModule, NgxMaskDirective],
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    NgxMaskDirective,
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
   private readonly contactService = inject(ContactService);
   private readonly dialogAlertService = inject(DialogAlertService);
-
-  isSubmitted = false;
 
   readonly contactForm = new FormGroup({
     name: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
@@ -30,7 +36,7 @@ export class ContactComponent {
   });
 
   submit(): void {
-    this.isSubmitted = true;
+    this.contactForm.markAllAsTouched();
     if (this.contactForm.valid) {
       const newContact: Contact = this.contactForm.getRawValue();
       this.contactService.send(newContact).subscribe({
@@ -48,7 +54,6 @@ export class ContactComponent {
         },
         complete: () => {
           this.contactForm.reset();
-          this.isSubmitted = false;
         },
       });
     }

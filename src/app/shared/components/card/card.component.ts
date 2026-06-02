@@ -1,5 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import {
   faAddressBook,
   IconDefinition,
@@ -7,34 +9,31 @@ import {
 
 @Component({
   selector: 'app-card',
-  standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, MatCardModule, MatButtonModule],
   template: `
-    <div class="card">
-      @if (icon()) {
-        <fa-icon
-          class="size-icon-in-content"
-          [icon]="icon()"
-        ></fa-icon>
-      }
-
-      <div class="app-card-body">
-        <h3 class="title m-0">{{ title() }}</h3>
-
-        <p class="m-0 tam">{{ description() }}</p>
-
-        @if (buttonTitle()) {
-          <div class="content-alignment">
-            <a
-              class="btn-card content-alignment"
-              (click)="actionEmitter.emit(true)"
-              style="cursor: pointer"
-              >{{ buttonTitle() }}</a
-            >
-          </div>
+    <mat-card class="card" appearance="outlined">
+      <mat-card-header>
+        @if (icon()) {
+          <fa-icon
+            class="size-icon-in-content"
+            [icon]="icon()"
+          ></fa-icon>
         }
-      </div>
-    </div>
+      </mat-card-header>
+
+      <mat-card-content class="app-card-body">
+        <h3 class="title m-0">{{ title() }}</h3>
+        <p class="m-0 tam">{{ description() }}</p>
+      </mat-card-content>
+
+      @if (buttonTitle()) {
+        <mat-card-actions>
+          <button mat-flat-button color="primary" (click)="actionEmitter.emit(true)">
+            {{ buttonTitle() }}
+          </button>
+        </mat-card-actions>
+      }
+    </mat-card>
   `,
   styleUrl: './card.component.css',
 })

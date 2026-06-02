@@ -1,3 +1,14 @@
 <app-navbar></app-navbar>
 <app-content-navigation></app-content-navigation>
 <app-footer></app-footer>
+
+@if (showBackToTop()) {
+  <button
+    mat-mini-fab
+    class="back-to-top"
+    (click)="scrollToTop()"
+    aria-label="Voltar ao topo"
+  >
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+}

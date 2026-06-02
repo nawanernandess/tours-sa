@@ -1,0 +1,25 @@
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  --mdc-fab-container-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+  background-color: transparent;
+  border-radius: 100%;
+}
+
+.back-to-top mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 767px) {
+  .back-to-top {
+    display: inline-flex;
+  }
+}

@@ -4,7 +4,6 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-avatar',
-  standalone: true,
   imports: [NgClass],
   template: `
     <div>
