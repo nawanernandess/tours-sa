@@ -1,6 +1,5 @@
 import { Component, input } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-avatar',
@@ -22,6 +21,6 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './avatar.component.css',
 })
 export class AvatarComponent {
-  readonly avatar = input<string | IconDefinition>('');
+  readonly avatar = input('');
   readonly size = input<'large' | 'medium' | 'small' | 'profile'>('medium');
 }
